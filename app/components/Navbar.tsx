@@ -7,6 +7,7 @@ import { useState } from "react";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/test", label: "Test" },
+  { href: "/testtextreveal", label: "Text Reveal" },
 ];
 
 export default function Navbar() {
@@ -137,4 +138,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
