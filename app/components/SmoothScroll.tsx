@@ -1,76 +1,52 @@
 "use client";
 
 import { ReactLenis } from "lenis/react";
-import { ReactNode, useEffect } from "react";
+import type { LenisRef } from "lenis/react";
+import { ReactNode, useEffect, useRef } from "react";
 import { ScrollTrigger } from "@/lib/gsapConfig";
-import { gsap } from "@/lib/gsapConfig";
 
 interface SmoothScrollProps {
   children: ReactNode;
 }
 
-// Component to sync Lenis with ScrollTrigger (must be inside ReactLenis)
-function LenisScrollSync({ children }: { children: ReactNode }) {
+export default function SmoothScroll({ children }: SmoothScrollProps) {
+  const lenisRef = useRef<LenisRef>(null);
+
   useEffect(() => {
-    // Wait for Lenis to initialize
-    const initIntegration = () => {
-      // Access Lenis instance from ReactLenis context
-      // ReactLenis stores instance on window.lenis
-      const lenis =
-        typeof window !== "undefined"
-          ? (
-              window as Window & {
-                lenis?: {
-                  on: (event: string, callback: () => void) => void;
-                  off: (event: string, callback: () => void) => void;
-                  raf: (time: number) => void;
-                };
-              }
-            ).lenis
-          : null;
+    const lenis = lenisRef.current?.lenis;
+    if (!lenis) return;
 
-      if (lenis && typeof lenis.on === "function" && lenis.raf) {
-        // Sync Lenis scroll events with ScrollTrigger
-        lenis.on("scroll", ScrollTrigger.update);
+    // Sync Lenis scroll events with ScrollTrigger
+    lenis.on("scroll", ScrollTrigger.update);
 
-        // Integrate Lenis RAF with GSAP ticker for smooth synchronization
-        function raf(time: number) {
-          if (lenis?.raf) {
-            lenis.raf(time * 1000);
-          }
-        }
-
-        gsap.ticker.add(raf);
-        gsap.ticker.lagSmoothing(0);
-
-        return () => {
-          lenis.off("scroll", ScrollTrigger.update);
-          gsap.ticker.remove(raf);
-          gsap.ticker.lagSmoothing(500, 33); // Restore default lag smoothing
-        };
-      }
+    // Refresh ScrollTrigger after Lenis is ready and on window load
+    const refreshScrollTrigger = () => {
+      // Small delay to ensure DOM is fully ready
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 100);
     };
 
-    // Try immediately and also after a short delay to ensure Lenis is initialized
-    const cleanup = initIntegration();
-    const timeoutId = setTimeout(() => {
-      const delayedCleanup = initIntegration();
-      if (delayedCleanup) delayedCleanup();
-    }, 100);
+    // Refresh on initial load
+    refreshScrollTrigger();
+
+    // Also refresh when window loads (handles page refreshes)
+    if (document.readyState === "complete") {
+      refreshScrollTrigger();
+    } else {
+      window.addEventListener("load", refreshScrollTrigger);
+    }
 
     return () => {
-      clearTimeout(timeoutId);
-      if (cleanup) cleanup();
+      lenis.off("scroll", ScrollTrigger.update);
+      window.removeEventListener("load", refreshScrollTrigger);
     };
   }, []);
 
-  return <>{children}</>;
-}
-
-export default function SmoothScroll({ children }: SmoothScrollProps) {
   return (
     <ReactLenis
       root
+      ref={lenisRef}
       options={{
         lerp: 0.1,
         duration: 1.2,
@@ -78,7 +54,7 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
         syncTouch: true,
       }}
     >
-      <LenisScrollSync>{children}</LenisScrollSync>
+      {children}
     </ReactLenis>
   );
 }
