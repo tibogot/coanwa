@@ -48,11 +48,10 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
       root
       ref={lenisRef}
       options={{
-        lerp: 0.1,
         duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         smoothWheel: true,
-        smoothTouch: false, // Disable smooth scrolling on touch devices for better mobile performance
-        touchMultiplier: 2, // Adjust touch sensitivity for native-like scrolling
+        smoothTouch: false, // Disable smooth scrolling on touch devices - use native scroll on mobile
         syncTouch: false, // Disable sync touch for better mobile performance
       }}
     >
