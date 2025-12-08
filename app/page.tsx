@@ -10,17 +10,17 @@ export default function Home() {
       <Leva hidden />
       <ShaderBackground />
       {/* Hero Section - on top of ShaderBackground */}
-      <section className="h-screen w-full flex items-center justify-center relative z-10">
-        <div className="max-w-7xl mx-auto px-8">
+      <section className="relative z-10 flex h-screen w-full items-center justify-center">
+        <div className="mx-auto max-w-7xl px-8">
           {/* Hero content goes here */}
         </div>
       </section>
       {/* New Section - 100vh with Primary Background */}
-      <section className="h-screen w-full bg-primary px-4 md:px-8">
-        <div className="max-w-7xl mx-auto h-full flex flex-col py-[120px]">
+      <section className="h-screen w-full bg-white px-4 md:px-8">
+        <div className="mx-auto flex h-full max-w-7xl flex-col py-[120px]">
           <div className="text-center">
             <TextReveal blockColor="#ff4d00" animateOnScroll={true}>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl text-black font-pp-neue-montreal  text-center">
+              <h2 className="font-pp-neue-montreal text-center text-4xl text-black md:text-5xl lg:text-6xl">
                 A construction <span className="text-secondary">company,</span>
                 <br />
                 offering integrated solution and

@@ -51,7 +51,9 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
         lerp: 0.1,
         duration: 1.2,
         smoothWheel: true,
-        syncTouch: true,
+        smoothTouch: false, // Disable smooth scrolling on touch devices for better mobile performance
+        touchMultiplier: 2, // Adjust touch sensitivity for native-like scrolling
+        syncTouch: false, // Disable sync touch for better mobile performance
       }}
     >
       {children}
