@@ -2,7 +2,7 @@
 
 import { ReactLenis } from "lenis/react";
 import type { LenisRef } from "lenis/react";
-import { ReactNode, useEffect, useRef } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "@/lib/gsapConfig";
 
 interface SmoothScrollProps {
@@ -11,10 +11,36 @@ interface SmoothScrollProps {
 
 export default function SmoothScroll({ children }: SmoothScrollProps) {
   const lenisRef = useRef<LenisRef>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Detect if device is mobile/touch
+    const checkMobile = () => {
+      const isTouchDevice =
+        "ontouchstart" in window ||
+        navigator.maxTouchPoints > 0 ||
+        window.matchMedia("(max-width: 768px)").matches;
+      setIsMobile(isTouchDevice);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
 
   useEffect(() => {
     const lenis = lenisRef.current?.lenis;
     if (!lenis) return;
+
+    // Stop Lenis on mobile devices for native scrolling
+    if (isMobile) {
+      lenis.stop();
+    } else {
+      lenis.start();
+    }
 
     // Sync Lenis scroll events with ScrollTrigger
     lenis.on("scroll", ScrollTrigger.update);
@@ -41,7 +67,7 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
       lenis.off("scroll", ScrollTrigger.update);
       window.removeEventListener("load", refreshScrollTrigger);
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <ReactLenis
@@ -50,9 +76,7 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
       options={{
         duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        smoothWheel: true,
-        smoothTouch: false, // Disable smooth scrolling on touch devices - use native scroll on mobile
-        syncTouch: false, // Disable sync touch for better mobile performance
+        syncTouch: false,
       }}
     >
       {children}
