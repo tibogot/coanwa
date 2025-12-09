@@ -5,6 +5,9 @@
   --foreground: #171717;
   --primary: #f6f0eb;
   --secondary: #ff4d00;
+  /* Aliases for StickyCards component */
+  --bg: var(--background);
+  --fg: var(--foreground);
 }
 
 @theme inline {
@@ -21,6 +24,9 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    /* Update aliases for dark mode */
+    --bg: var(--background);
+    --fg: var(--foreground);
   }
 }
 

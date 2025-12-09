@@ -2,6 +2,7 @@
 
 import ShaderBackground from "./components/ShaderBackground4";
 import TextReveal from "./components/TextReveal";
+import StickyCards from "./components/StickyCards";
 import { Leva } from "leva";
 
 export default function Home() {
@@ -31,6 +32,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Sticky Cards Section */}
+      <StickyCards />
     </>
   );
 }
