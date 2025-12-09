@@ -3,13 +3,13 @@ import Image from "next/image";
 
 export default function ExamplePage() {
   return (
-    <div className="min-h-screen bg-linear-to-b from-gray-50 to-gray-100">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+      <div className="mx-auto max-w-6xl">
         {/* Hero Section - 100vh */}
-        <section className="h-screen flex items-center justify-center px-8">
-          <div className="text-center">
+        <section className="flex h-screen items-center justify-center px-4 sm:px-8">
+          <div className="w-full max-w-full text-center">
             <TextReveal animateOnScroll={false} blockColor="#000" delay={0.3}>
-              <h1 className="text-7xl md:text-8xl lg:text-9xl font-black text-gray-900 leading-tight font-pp-neue-montreal">
+              <h1 className="font-pp-neue-montreal text-4xl leading-tight font-black break-words text-gray-900 sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl">
                 Beautiful Text
                 <br />
                 Reveal Animation
@@ -19,8 +19,8 @@ export default function ExamplePage() {
         </section>
 
         {/* Image Section 1 */}
-        <section className="py-24 px-8 flex items-center justify-center">
-          <div className="relative w-full max-w-4xl aspect-video overflow-hidden">
+        <section className="flex items-center justify-center px-4 py-24 sm:px-8">
+          <div className="relative aspect-video w-full max-w-4xl overflow-hidden">
             <Image
               src="https://picsum.photos/1200/675?random=1"
               alt="Beautiful Landscape"
@@ -33,17 +33,17 @@ export default function ExamplePage() {
         </section>
 
         {/* Text Section 1 */}
-        <section className="py-32 px-8 flex items-center justify-center">
-          <div className="text-center max-w-5xl mx-auto w-full">
+        <section className="flex items-center justify-center px-4 py-32 sm:px-8">
+          <div className="mx-auto w-full max-w-5xl text-center">
             <TextReveal blockColor="#3b82f6" stagger={0.2} duration={0.8}>
-              <div className="space-y-6 mx-auto text-center">
-                <h2 className="text-5xl md:text-6xl font-bold text-gray-900 text-center">
+              <div className="mx-auto space-y-6 text-center">
+                <h2 className="text-center text-3xl font-bold break-words text-gray-900 sm:text-4xl md:text-5xl lg:text-6xl">
                   Smooth & Elegant
                 </h2>
-                <p className="text-2xl md:text-3xl text-gray-700 font-light text-center">
+                <p className="text-center text-lg font-light break-words text-gray-700 sm:text-xl md:text-2xl lg:text-3xl">
                   Experience the power of GSAP animations
                 </p>
-                <p className="text-xl md:text-2xl text-gray-600 font-light text-center">
+                <p className="text-center text-base font-light break-words text-gray-600 sm:text-lg md:text-xl lg:text-2xl">
                   With customizable reveal effects
                 </p>
               </div>
@@ -52,8 +52,8 @@ export default function ExamplePage() {
         </section>
 
         {/* Image Section 2 */}
-        <section className="py-24 px-8 flex items-center justify-center">
-          <div className="relative w-full max-w-3xl aspect-square overflow-hidden">
+        <section className="flex items-center justify-center px-4 py-24 sm:px-8">
+          <div className="relative aspect-square w-full max-w-3xl overflow-hidden">
             <Image
               src="https://picsum.photos/800/800?random=2"
               alt="Portrait Photo"
@@ -65,14 +65,14 @@ export default function ExamplePage() {
         </section>
 
         {/* Text Section 2 */}
-        <section className="py-32 px-8 flex items-center justify-center">
-          <div className="text-center max-w-5xl mx-auto w-full">
+        <section className="flex items-center justify-center px-4 py-32 sm:px-8">
+          <div className="mx-auto w-full max-w-5xl text-center">
             <TextReveal animateOnScroll={true} blockColor="#10b981" delay={0.2}>
               <div className="mx-auto text-center">
-                <h2 className="text-5xl md:text-6xl font-semibold text-gray-900 mb-8 text-center font-pp-neue-montreal">
+                <h2 className="font-pp-neue-montreal mb-8 text-center text-3xl font-semibold break-words text-gray-900 sm:text-4xl md:text-5xl lg:text-6xl">
                   Scroll Down to See Magic
                 </h2>
-                <p className="text-xl md:text-2xl text-gray-600 font-light text-center font-pp-neue-montreal">
+                <p className="font-pp-neue-montreal text-center text-lg font-light break-words text-gray-600 sm:text-xl md:text-2xl">
                   Each section reveals as you scroll
                 </p>
               </div>
@@ -81,8 +81,8 @@ export default function ExamplePage() {
         </section>
 
         {/* Image Section 3 - Full Width */}
-        <section className="py-24 px-8">
-          <div className="relative w-full h-[60vh] overflow-hidden">
+        <section className="px-4 py-24 sm:px-8">
+          <div className="relative h-[60vh] w-full overflow-hidden">
             <Image
               src="https://picsum.photos/1600/900?random=3"
               alt="Wide Landscape"
@@ -94,21 +94,21 @@ export default function ExamplePage() {
         </section>
 
         {/* Text Section 3 */}
-        <section className="py-32 px-8 flex items-center justify-center">
-          <div className="text-center max-w-5xl mx-auto w-full">
+        <section className="flex items-center justify-center px-4 py-32 sm:px-8">
+          <div className="mx-auto w-full max-w-5xl text-center">
             <TextReveal
               blockColor="#8b5cf6"
               stagger={0.1}
               animateOnScroll={true}
             >
-              <div className="space-y-8 mx-auto text-center">
-                <h3 className="text-4xl md:text-5xl font-bold text-gray-900 text-center font-pp-neue-montreal">
+              <div className="mx-auto space-y-8 text-center">
+                <h3 className="font-pp-neue-montreal text-center text-2xl font-bold break-words text-gray-900 sm:text-3xl md:text-4xl lg:text-5xl">
                   Multiple Elements
                 </h3>
-                <p className="text-2xl md:text-3xl text-gray-700 font-light text-center font-pp-neue-montreal">
+                <p className="font-pp-neue-montreal text-center text-lg font-light break-words text-gray-700 sm:text-xl md:text-2xl lg:text-3xl">
                   Use data-copy-wrapper attribute
                 </p>
-                <p className="text-xl md:text-2xl text-gray-600 font-light text-center font-pp-neue-montreal">
+                <p className="font-pp-neue-montreal text-center text-base font-light break-words text-gray-600 sm:text-lg md:text-xl lg:text-2xl">
                   To animate all children separately
                 </p>
               </div>
@@ -117,8 +117,8 @@ export default function ExamplePage() {
         </section>
 
         {/* Image Section 4 */}
-        <section className="py-24 px-8 flex items-center justify-center">
-          <div className="relative w-full max-w-4xl aspect-video overflow-hidden">
+        <section className="flex items-center justify-center px-4 py-24 sm:px-8">
+          <div className="relative aspect-video w-full max-w-4xl overflow-hidden">
             <Image
               src="https://picsum.photos/1200/675?random=4"
               alt="Nature Scene"
@@ -130,15 +130,15 @@ export default function ExamplePage() {
         </section>
 
         {/* Text Section 4 */}
-        <section className="py-32 px-8 flex items-center justify-center">
-          <div className="text-center max-w-5xl mx-auto w-full">
+        <section className="flex items-center justify-center px-4 py-32 sm:px-8">
+          <div className="mx-auto w-full max-w-5xl text-center">
             <TextReveal
               animateOnScroll={false}
               blockColor="#ef4444"
               delay={0.5}
             >
               <div className="mx-auto text-center">
-                <p className="text-4xl md:text-5xl font-light text-gray-800 text-center font-pp-neue-montreal">
+                <p className="font-pp-neue-montreal text-center text-2xl font-light break-words text-gray-800 sm:text-3xl md:text-4xl lg:text-5xl">
                   This reveals immediately on page load
                 </p>
               </div>
@@ -147,15 +147,15 @@ export default function ExamplePage() {
         </section>
 
         {/* Text Section - Long Paragraph Example */}
-        <section className="py-32 px-8 flex items-center justify-center">
-          <div className="max-w-4xl mx-auto w-full text-left">
+        <section className="flex items-center justify-center px-4 py-32 sm:px-8">
+          <div className="mx-auto w-full max-w-4xl text-left">
             <TextReveal
               animateOnScroll={true}
               blockColor="#ec4899"
               stagger={0.15}
               duration={0.8}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 font-pp-neue-montreal">
+              <h2 className="font-pp-neue-montreal mb-8 text-2xl font-bold break-words text-gray-900 sm:text-3xl md:text-4xl lg:text-5xl">
                 Long Paragraph Example
               </h2>
             </TextReveal>
@@ -165,7 +165,7 @@ export default function ExamplePage() {
               stagger={0.15}
               duration={0.8}
             >
-              <p className="text-lg md:text-xl text-gray-700 font-normal leading-relaxed font-pp-neue-montreal">
+              <p className="font-pp-neue-montreal text-base leading-relaxed font-normal break-words text-gray-700 sm:text-lg md:text-xl">
                 This is a longer paragraph that will definitely wrap to multiple
                 lines when displayed on the screen. The TextReveal component
                 will automatically detect each line break and create a separate
@@ -184,8 +184,8 @@ export default function ExamplePage() {
         </section>
 
         {/* Image Section 5 */}
-        <section className="py-24 px-8 flex items-center justify-center">
-          <div className="relative w-full max-w-3xl aspect-square overflow-hidden">
+        <section className="flex items-center justify-center px-4 py-24 sm:px-8">
+          <div className="relative aspect-square w-full max-w-3xl overflow-hidden">
             <Image
               src="https://picsum.photos/800/800?random=5"
               alt="Artistic Photo"
@@ -197,14 +197,14 @@ export default function ExamplePage() {
         </section>
 
         {/* Text Section 5 - Dark Background */}
-        <section className="py-32 px-8 flex items-center justify-center">
-          <div className="text-center max-w-5xl mx-auto w-full">
+        <section className="flex items-center justify-center px-4 py-32 sm:px-8">
+          <div className="mx-auto w-full max-w-5xl text-center">
             <TextReveal blockColor="#f59e0b" duration={1} stagger={0.15}>
-              <div className="bg-gray-900 p-12 md:p-16 rounded-3xl mx-auto text-center">
-                <h2 className="text-5xl md:text-6xl font-black text-white text-center font-pp-neue-montreal">
+              <div className="mx-auto rounded-3xl bg-gray-900 p-6 text-center sm:p-8 md:p-12 lg:p-16">
+                <h2 className="font-pp-neue-montreal text-center text-3xl font-black break-words text-white sm:text-4xl md:text-5xl lg:text-6xl">
                   Works With Any Styling
                 </h2>
-                <p className="text-2xl md:text-3xl text-gray-300 font-light mt-6 text-center font-pp-neue-montreal">
+                <p className="font-pp-neue-montreal mt-6 text-center text-lg font-light break-words text-gray-300 sm:text-xl md:text-2xl lg:text-3xl">
                   Dark backgrounds, light backgrounds, gradients
                 </p>
               </div>
@@ -213,7 +213,7 @@ export default function ExamplePage() {
         </section>
 
         {/* Final Image Section - Full Width 100vh */}
-        <section className="relative w-full h-screen overflow-hidden">
+        <section className="relative h-screen w-full overflow-hidden">
           <Image
             src="https://picsum.photos/1920/1080?random=6"
             alt="Full Width Background"
@@ -222,13 +222,13 @@ export default function ExamplePage() {
             className="object-cover opacity-30"
           />
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center px-8 w-full max-w-6xl mx-auto">
+            <div className="mx-auto w-full max-w-6xl px-4 text-center sm:px-8">
               <TextReveal blockColor="#ffffff" duration={0.9} stagger={0.2}>
                 <div className="mx-auto text-center">
-                  <h2 className="text-6xl md:text-8xl font-black text-white text-center font-pp-neue-montreal">
+                  <h2 className="font-pp-neue-montreal text-center text-3xl font-black break-words text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl">
                     Text Over Image
                   </h2>
-                  <p className="text-2xl md:text-3xl text-white/90 font-light mt-6 text-center font-pp-neue-montreal">
+                  <p className="font-pp-neue-montreal mt-6 text-center text-lg font-light break-words text-white/90 sm:text-xl md:text-2xl lg:text-3xl">
                     Beautiful reveal on any background
                   </p>
                 </div>
