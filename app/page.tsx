@@ -27,12 +27,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Service Scroll Section */}
-      {/* <ServiceScroll /> */}
       {/* Sticky Cards Section */}
       {/* <StickyCards /> */}
-      <section className="h-screen w-full bg-white px-4 md:px-8">
-        <div className="mx-auto flex h-full max-w-7xl flex-col py-[120px]">
+      <section className="w-full bg-white px-4 py-30 md:px-8">
+        <div className="mx-auto flex h-full max-w-7xl flex-col">
           <div className="text-center">
             <TextReveal blockColor="#ff4d00" animateOnScroll={true}>
               <h2 className="font-pp-neue-montreal text-center text-4xl text-black md:text-5xl lg:text-6xl">
@@ -46,6 +44,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Service Scroll Section */}
+      {/* <ServiceScroll /> */}
+
       <StickyCards3D />
 
       {/* Glass Cards Section */}
@@ -152,15 +153,34 @@ export default function Home() {
 
       {/* Profiles Ticker Section */}
       <section className="relative w-full bg-white py-24 md:py-32">
-        <div className="mb-16 px-4 text-center md:mb-24 md:px-8">
-          <div className="mx-auto max-w-7xl">
-            <h2 className="font-pp-neue-montreal mb-6 text-4xl font-medium text-black md:text-5xl lg:text-6xl">
-              Our Team
-            </h2>
-            <p className="font-pp-neue-montreal mx-auto max-w-2xl text-lg text-black/80 md:text-xl">
-              Meet the dedicated professionals driving excellence across all our
-              construction and engineering projects.
-            </p>
+        <div className="mb-16 px-4 md:mb-24 md:px-8">
+          <div className="flex flex-col items-start">
+            <TextReveal
+              animateOnScroll={true}
+              blockColor="#ff4d00"
+              stagger={0.15}
+              duration={0.8}
+            >
+              <p className="font-pp-neue-montreal mb-8 max-w-2xl text-left text-4xl font-medium text-black md:text-5xl lg:text-6xl">
+                Our Team
+              </p>
+            </TextReveal>
+            <div className="text-left" style={{ textAlign: "left" }}>
+              <TextReveal
+                animateOnScroll={true}
+                blockColor="#ff4d00"
+                stagger={0.15}
+                duration={0.8}
+              >
+                <p
+                  className="font-pp-neue-montreal max-w-2xl text-left text-base leading-relaxed text-black/80 sm:text-lg md:text-xl"
+                  style={{ textAlign: "left" }}
+                >
+                  Meet the dedicated professionals driving excellence across all
+                  our construction and engineering projects.
+                </p>
+              </TextReveal>
+            </div>
           </div>
         </div>
         <ProfilesTicker />

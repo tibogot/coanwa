@@ -84,8 +84,8 @@ const StickyCards3D = () => {
 
   return (
     <div
-      className="relative h-full w-full"
-      style={{ backgroundColor: "var(--bg)" }}
+      className="relative h-full w-full overflow-hidden"
+      style={{ backgroundColor: "var(--bg)", isolation: "isolate" }}
       ref={container}
     >
       {stickyCardsData.map((cardData, index) => (
@@ -98,6 +98,7 @@ const StickyCards3D = () => {
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               "--after-opacity": 0,
+              zIndex: index + 1,
             } as React.CSSProperties
           }
           key={index}
