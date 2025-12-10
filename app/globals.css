@@ -44,6 +44,12 @@ body {
   margin-right: auto;
 }
 
+/* Override centering for left-aligned text */
+.text-left .block-line-wrapper {
+  margin-left: 0;
+  margin-right: auto;
+}
+
 .block-line {
   position: relative;
   display: block;

@@ -165,17 +165,14 @@ export default function Home() {
                 Our Team
               </p>
             </TextReveal>
-            <div className="text-left" style={{ textAlign: "left" }}>
+            <div className="text-left">
               <TextReveal
                 animateOnScroll={true}
                 blockColor="#ff4d00"
                 stagger={0.15}
                 duration={0.8}
               >
-                <p
-                  className="font-pp-neue-montreal max-w-2xl text-left text-base leading-relaxed text-black/80 sm:text-lg md:text-xl"
-                  style={{ textAlign: "left" }}
-                >
+                <p className="font-pp-neue-montreal max-w-2xl text-left text-base leading-relaxed text-black/80 sm:text-lg md:text-xl">
                   Meet the dedicated professionals driving excellence across all
                   our construction and engineering projects.
                 </p>
