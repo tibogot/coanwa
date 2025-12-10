@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import { useLenis } from "lenis/react";
+import Image from "next/image";
 import { gsap, ScrollTrigger, SplitText } from "@/lib/gsapConfig";
 
 const servicesData = [
@@ -217,7 +218,7 @@ export default function ServiceScroll() {
           // Use scroll position from ScrollTrigger which is synced with Lenis
           const scrollPosition = Math.max(
             0,
-            self.scroll() - window.innerHeight
+            self.scroll() - window.innerHeight,
           );
           const activeIndex = Math.floor(scrollPosition / scrollPerService);
 
@@ -228,9 +229,7 @@ export default function ServiceScroll() {
           ) {
             currentIndex = activeIndex;
 
-            services.forEach((service) =>
-              service.classList.remove("active")
-            );
+            services.forEach((service) => service.classList.remove("active"));
             services[activeIndex].classList.add("active");
 
             await Promise.all([
@@ -270,7 +269,7 @@ export default function ServiceScroll() {
         });
       };
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   return (
@@ -286,7 +285,7 @@ export default function ServiceScroll() {
             {/* Indicator */}
             <div
               ref={indicatorRef}
-              className="indicator absolute left-0 top-0 z-[-1] h-[38px] bg-secondary"
+              className="indicator bg-secondary absolute top-0 left-0 z-[-1] h-[38px]"
             />
 
             {/* Services */}
@@ -300,7 +299,7 @@ export default function ServiceScroll() {
                   index === 0 ? "active" : ""
                 }`}
               >
-                <p className="service-text font-pp-neue-montreal text-4xl   text-gray-400 transition-colors duration-300 md:text-5xl">
+                <p className="service-text font-pp-neue-montreal text-4xl text-gray-400 transition-colors duration-300 md:text-5xl">
                   {service.title}
                 </p>
               </div>
@@ -323,11 +322,12 @@ export default function ServiceScroll() {
               className="service-img h-[2000px] w-full will-change-transform"
             >
               {servicesData.map((service, index) => (
-                <div key={index} className="img h-[250px] w-full">
-                  <img
+                <div key={index} className="img relative h-[250px] w-full">
+                  <Image
                     src={service.image}
                     alt={service.title}
-                    className="h-full w-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                 </div>
               ))}
@@ -338,7 +338,7 @@ export default function ServiceScroll() {
           <div className="service-copy w-[60%] md:w-[60%]">
             <p
               ref={serviceCopyRef}
-              className="font-pp-neue-montreal text-sm font-normal leading-7 text-black md:text-lg"
+              className="font-pp-neue-montreal text-sm leading-7 font-normal text-black md:text-lg"
             >
               {servicesData[0].description}
             </p>
@@ -346,16 +346,14 @@ export default function ServiceScroll() {
         </div>
 
         {/* Progress Bar */}
-        <div className="progress-bar absolute left-1/2 top-[-15%] h-[50%] w-[2.5px] -translate-x-1/2 rotate-[-90deg] bg-[#e0e0e0] md:top-1/2 md:h-[60%] md:translate-y-[-50%] md:rotate-0">
+        <div className="progress-bar absolute top-[-15%] left-1/2 h-[50%] w-px -translate-x-1/2 -rotate-90 bg-[#e0e0e0] md:top-1/2 md:h-[60%] md:translate-y-[-50%] md:rotate-0">
           <div
             ref={progressRef}
-            className="progress absolute left-0 top-0 h-full w-full origin-top bg-secondary will-change-transform"
+            className="progress bg-secondary absolute top-0 left-0 h-full w-full origin-top will-change-transform"
             style={{ transform: "scaleY(0)" }}
           />
         </div>
-
       </section>
     </div>
   );
 }
-

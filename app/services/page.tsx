@@ -1,12 +1,30 @@
+"use client";
+
 export default function Services() {
   return (
-    <section className="flex h-screen w-full items-center justify-center">
-      <div className="mx-auto max-w-7xl px-8 text-center">
-        <h1 className="font-pp-neue-montreal text-5xl font-medium text-black md:text-6xl lg:text-7xl">
-          Services
+    <section className="relative flex h-screen w-full items-end bg-cover bg-center bg-no-repeat">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: "url('/sticky-cards/stickycard-2.webp')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
+      
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 z-[1] bg-black/20" />
+
+      {/* Content - Bottom left like home hero */}
+      <div className="relative z-10 w-full px-4 pb-8 md:px-8 md:pb-12">
+        <h1 className="font-pp-neue-montreal text-2xl text-white md:text-6xl">
+          Comprehensive construction solutions
+          <br />
+          tailored to your needs
         </h1>
       </div>
     </section>
   );
 }
-

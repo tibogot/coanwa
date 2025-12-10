@@ -3,6 +3,7 @@
 import ShaderBackground from "./components/ShaderBackground4";
 import TextReveal from "./components/TextReveal";
 import StickyCards3D from "./components/StickyCards3D";
+import ProfilesTicker from "./components/ProfilesTicker";
 import { Leva } from "leva";
 
 export default function Home() {
@@ -14,18 +15,22 @@ export default function Home() {
       <section className="relative z-10 flex h-screen w-full items-end">
         <div className="w-full px-4 pb-8 md:px-8 md:pb-12">
           <p className="font-pp-neue-montreal text-2xl text-white md:text-6xl">
-            A construction company,
+            Building excellence
             <br />
-            offering integrated solution
+            across West Africa
           </p>
           <p className="font-pp-neue-montreal mt-4 max-w-2xl text-base text-white/80 md:mt-6 md:text-lg lg:text-xl">
-            With over 34 years of excellence in the industry, we deliver
-            comprehensive construction and engineering services across West
-            Africa. 
+            Three decades of expertise in construction and engineering,
+            delivering integrated solutions that shape the future of
+            infrastructure.
           </p>
         </div>
       </section>
-      {/* New Section - 100vh with Primary Background */}
+
+      {/* Service Scroll Section */}
+      {/* <ServiceScroll /> */}
+      {/* Sticky Cards Section */}
+      {/* <StickyCards /> */}
       <section className="h-screen w-full bg-white px-4 md:px-8">
         <div className="mx-auto flex h-full max-w-7xl flex-col py-[120px]">
           <div className="text-center">
@@ -41,11 +46,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Service Scroll Section */}
-      {/* <ServiceScroll /> */}
-      {/* Sticky Cards Section */}
-      {/* <StickyCards /> */}
       <StickyCards3D />
 
       {/* Glass Cards Section */}
@@ -53,9 +53,11 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           {/* Section Header */}
           <div className="mb-16 text-center md:mb-24">
-            <h2 className="font-pp-neue-montreal mb-6 text-4xl font-medium text-white md:text-5xl lg:text-6xl">
-              Our Services
-            </h2>
+            <TextReveal blockColor="#ffffff" stagger={0.15} duration={0.75}>
+              <h2 className="font-pp-neue-montreal mb-6 text-4xl font-medium text-white md:text-5xl lg:text-6xl">
+                Our Services
+              </h2>
+            </TextReveal>
             <p className="font-pp-neue-montreal mx-auto max-w-2xl text-lg text-white/80 md:text-xl">
               Comprehensive solutions tailored to your construction needs, from
               initial planning to ongoing maintenance and support.
@@ -146,6 +148,22 @@ export default function Home() {
             </p>
           </div>
         </div>
+      </section>
+
+      {/* Profiles Ticker Section */}
+      <section className="relative w-full bg-white py-24 md:py-32">
+        <div className="mb-16 px-4 text-center md:mb-24 md:px-8">
+          <div className="mx-auto max-w-7xl">
+            <h2 className="font-pp-neue-montreal mb-6 text-4xl font-medium text-black md:text-5xl lg:text-6xl">
+              Our Team
+            </h2>
+            <p className="font-pp-neue-montreal mx-auto max-w-2xl text-lg text-black/80 md:text-xl">
+              Meet the dedicated professionals driving excellence across all our
+              construction and engineering projects.
+            </p>
+          </div>
+        </div>
+        <ProfilesTicker />
       </section>
     </>
   );

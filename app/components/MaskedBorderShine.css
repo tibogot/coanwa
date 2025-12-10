@@ -1,0 +1,40 @@
+.masked-border-shine {
+  position: relative;
+  border-radius: inherit;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+/* Glass backdrop effect (::before) - matches CodePen */
+.masked-border-shine::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  z-index: -1;
+  background: linear-gradient(hsl(0 0% 100% / 0.18), hsl(0 0% 4% / 0.7));
+  backdrop-filter: saturate(2) contrast(1);
+}
+
+/* Inset border shine effect (::after) - matches CodePen */
+.masked-border-shine::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  z-index: 15;
+  pointer-events: none;
+  box-shadow: 0 0 1px var(--border-width, 0.8px) var(--shine-color, hsl(0 0% 100% / 0.8)) inset;
+  mask: linear-gradient(
+    calc(var(--pointer-angle, 325) * 1deg),
+    #ffffff80,
+    #ffffff30 30% 60%,
+    #fff
+  );
+  -webkit-mask: linear-gradient(
+    calc(var(--pointer-angle, 325) * 1deg),
+    #ffffff80,
+    #ffffff30 30% 60%,
+    #fff
+  );
+}

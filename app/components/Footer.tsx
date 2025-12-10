@@ -82,6 +82,14 @@ export default function Footer() {
                     Text Reveal
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/test-shine"
+                    className="hover:text-secondary text-white/80 transition-colors"
+                  >
+                    Border Shine
+                  </Link>
+                </li>
               </ul>
             </div>
 
