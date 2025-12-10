@@ -3,7 +3,6 @@
 import ShaderBackground from "./components/ShaderBackground4";
 import TextReveal from "./components/TextReveal";
 import StickyCards3D from "./components/StickyCards3D";
-import ServiceScroll from "./components/ServiceScroll";
 import { Leva } from "leva";
 
 export default function Home() {
@@ -12,9 +11,18 @@ export default function Home() {
       <Leva hidden />
       <ShaderBackground />
       {/* Hero Section - on top of ShaderBackground */}
-      <section className="relative z-10 flex h-screen w-full items-center justify-center">
-        <div className="mx-auto max-w-7xl px-8">
-          {/* Hero content goes here */}
+      <section className="relative z-10 flex h-screen w-full items-end">
+        <div className="w-full px-4 pb-8 md:px-8 md:pb-12">
+          <p className="font-pp-neue-montreal text-2xl text-white md:text-6xl">
+            A construction company,
+            <br />
+            offering integrated solution
+          </p>
+          <p className="font-pp-neue-montreal mt-4 max-w-2xl text-base text-white/80 md:mt-6 md:text-lg lg:text-xl">
+            With over 34 years of excellence in the industry, we deliver
+            comprehensive construction and engineering services across West
+            Africa. 
+          </p>
         </div>
       </section>
       {/* New Section - 100vh with Primary Background */}

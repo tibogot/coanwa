@@ -66,6 +66,22 @@ export default function Footer() {
                     Careers
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/test"
+                    className="hover:text-secondary text-white/80 transition-colors"
+                  >
+                    Test
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/testtextreveal"
+                    className="hover:text-secondary text-white/80 transition-colors"
+                  >
+                    Text Reveal
+                  </Link>
+                </li>
               </ul>
             </div>
 
