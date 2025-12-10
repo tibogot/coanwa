@@ -3,6 +3,7 @@
 import ShaderBackground from "./components/ShaderBackground4";
 import TextReveal from "./components/TextReveal";
 import StickyCards3D from "./components/StickyCards3D";
+import ServiceScroll from "./components/ServiceScroll";
 import { Leva } from "leva";
 
 export default function Home() {
@@ -32,9 +33,13 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Service Scroll Section */}
+      {/* <ServiceScroll /> */}
       {/* Sticky Cards Section */}
       {/* <StickyCards /> */}
       <StickyCards3D />
+
       {/* Glass Cards Section */}
       <section className="relative min-h-[150vh] w-full bg-transparent px-4 py-24 md:px-8 md:py-32">
         <div className="mx-auto max-w-7xl">

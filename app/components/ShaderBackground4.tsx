@@ -11,7 +11,7 @@ function useIsClient() {
   return useSyncExternalStore(
     emptySubscribe,
     () => true,
-    () => false
+    () => false,
   );
 }
 
@@ -236,15 +236,24 @@ function GradientPlane() {
       color3: "#FFB366",
       color4: "#F5F5F5",
     },
+    "Orange Final": {
+      color1: "#FF8000",
+      color2: "#FF8000",
+      color3: "#FFB366",
+      color4: "#FFB366",
+    },
   };
 
   // Leva controls
   const [colors, setColors] = useControls("🎨 Colors", () => ({
-    color1: { value: "#62d8e0", label: "Accent 1" },
-    color2: { value: "#020328", label: "Dark 1" },
-    color3: { value: "#0e3e5d", label: "Accent 2" },
-    color4: { value: "#030329", label: "Dark 2" },
+    color1: { value: "#FF8000", label: "Accent 1" },
+    color2: { value: "#FF8000", label: "Dark 1" },
+    color3: { value: "#FFB366", label: "Accent 2" },
+    color4: { value: "#FFB366", label: "Dark 2" },
     " ": button(() => {}), // Spacer
+    "Orange Final": button(() => {
+      setColors(colorPresets["Orange Final"]);
+    }),
     "Ocean (Default)": button(() => {
       setColors(colorPresets["Ocean (Default)"]);
     }),
@@ -467,7 +476,7 @@ function GradientPlane() {
       uBrightness: { value: metallic.brightness },
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
+    [],
   );
 
   // Mouse tracking
@@ -514,11 +523,11 @@ function GradientPlane() {
       materialRef.current.uniforms.iResolution.value.set(
         window.innerWidth * state.viewport.dpr,
         window.innerHeight * state.viewport.dpr,
-        1
+        1,
       );
       materialRef.current.uniforms.iMouse.value.set(
         mouseRef.current.x,
-        mouseRef.current.y
+        mouseRef.current.y,
       );
 
       // Update colors from Leva
@@ -541,7 +550,7 @@ function GradientPlane() {
       // Update position parameters
       materialRef.current.uniforms.uUvOffset.value.set(
         position.uvOffsetX,
-        position.uvOffsetY
+        position.uvOffsetY,
       );
       materialRef.current.uniforms.uLayerMixStart.value =
         position.layerMixStart;

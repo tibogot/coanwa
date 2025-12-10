@@ -86,3 +86,8 @@ html.lenis body {
 .lenis.lenis-smooth iframe {
   pointer-events: none;
 }
+
+/* ServiceScroll component styles */
+.service.active .service-text {
+  color: #000;
+}
