@@ -9,28 +9,28 @@ const StickyCards3D = () => {
   const stickyCardsData = [
     {
       index: "01",
-      title: "Modularity",
+      title: "Planning",
       image: "/sticky-cards/stickycard-1.webp",
       description:
         "Every element is built to snap into place. We design modular systems where clarity, structure, and reuse come first—no clutter, no excess.",
     },
     {
       index: "02",
-      title: "Materials",
+      title: "Design",
       image: "/sticky-cards/stickycard-2.webp",
       description:
         "From soft gradients to hard edges, our design language draws from real-world materials—elevating interfaces that feel both digital and tangible.",
     },
     {
       index: "03",
-      title: "Precision",
+      title: "Construction",
       image: "/sticky-cards/stickycard-3.webp",
       description:
         "Details matter. We work with intention—aligning pixels, calibrating contrast, and obsessing over every edge until it just feels right.",
     },
     {
       index: "04",
-      title: "Character",
+      title: "Operation & Maintenance",
       image: "/sticky-cards/stickycard-4.webp",
       description:
         "Interfaces should have personality. We embed small moments of play and irregularity to bring warmth, charm, and a human feel to the digital.",
@@ -90,7 +90,7 @@ const StickyCards3D = () => {
     >
       {stickyCardsData.map((cardData, index) => (
         <div
-          className="sticky-card-3d relative flex h-screen w-full items-center justify-center overflow-hidden will-change-transform after:pointer-events-none after:absolute after:top-0 after:left-0 after:z-[2] after:h-full after:w-full after:bg-black/50 after:opacity-[var(--after-opacity,0)] after:transition-opacity after:duration-100 after:ease-linear after:content-['']"
+          className="sticky-card-3d relative flex h-screen w-full items-center justify-center overflow-hidden will-change-transform after:pointer-events-none after:absolute after:top-0 after:left-0 after:z-2 after:h-full after:w-full after:bg-black/50 after:opacity-[var(--after-opacity,0)] after:transition-opacity after:duration-100 after:ease-linear after:content-['']"
           style={
             {
               backgroundImage: `url(${cardData.image})`,
@@ -103,31 +103,32 @@ const StickyCards3D = () => {
           key={index}
         >
           {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 z-[1] bg-black/40" />
+          <div className="absolute inset-0 z-1 bg-black/10" />
 
           {/* Content */}
-          <div className="relative z-[3] mx-auto flex w-full max-w-7xl flex-col gap-12 px-8 text-white max-[1000px]:gap-8">
-            {/* Index */}
-            <div className="font-pp-neue-montreal">
-              <h1 className="text-6xl font-light tracking-tight md:text-8xl lg:text-9xl">
-                {cardData.index}
-              </h1>
+          <div className="relative z-3 flex h-full w-full flex-col justify-between p-8 md:p-12">
+            {/* Top Row - Number and Title */}
+            <div className="flex w-full items-start gap-8 md:gap-12">
+              {/* Index - Top Left */}
+              <div className="font-pp-neue-montreal text-white">
+                <h1 className="text-2xl font-light tracking-tight md:text-3xl lg:text-4xl">
+                  {cardData.index}
+                </h1>
+              </div>
+
+              {/* Title - To the right of number, pushed down */}
+              <div className="font-pp-neue-montreal mt-6 text-white md:mt-8">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl">
+                  {cardData.title}
+                </h2>
+              </div>
             </div>
 
-            {/* Title and Description */}
-            <div className="flex flex-col gap-8 max-[1000px]:gap-6">
-              <h2 className="font-pp-neue-montreal text-5xl leading-tight font-medium md:text-6xl lg:text-7xl">
-                {cardData.title}
-              </h2>
-
-              <div className="flex max-w-2xl flex-col gap-6 max-[1000px]:gap-4">
-                <p className="font-pp-neue-montreal text-sm font-semibold tracking-wider text-white/80 uppercase">
-                  (About the state)
-                </p>
-                <p className="font-pp-neue-montreal text-lg leading-relaxed text-white/90 md:text-xl lg:text-2xl">
-                  {cardData.description}
-                </p>
-              </div>
+            {/* Description - Bottom */}
+            <div className="font-pp-neue-montreal max-w-2xl text-white">
+              <p className="text-base md:text-2xl lg:text-3xl">
+                {cardData.description}
+              </p>
             </div>
           </div>
         </div>
