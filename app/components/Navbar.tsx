@@ -18,7 +18,7 @@ export default function Navbar() {
     <nav className="fixed top-8 left-1/2 z-100 flex w-full max-w-4xl -translate-x-1/2 items-center rounded-md bg-gradient-to-b from-black/10 via-black/10 to-black/5 px-6 py-2 backdrop-blur-xl">
       {/* Left Section - Logo */}
       <div className="flex flex-1 items-center">
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex cursor-pointer items-center">
           <Image
             src="/logovintage.svg"
             alt="COAN Logo"
@@ -35,7 +35,7 @@ export default function Navbar() {
           <Link
             key={link.href}
             href={link.href}
-            className="py-1 text-[0.95rem] tracking-wide text-white/90 transition-colors duration-200 hover:text-white/60"
+            className="cursor-pointer py-1 text-[0.95rem] tracking-wide text-white/90 transition-colors duration-200 hover:text-white/60"
           >
             {link.label}
           </Link>
@@ -47,7 +47,7 @@ export default function Navbar() {
         {/* Contact Link - Desktop */}
         <Link
           href="/contact"
-          className="desktop-nav bg-tertiary hover:bg-secondary rounded-sm px-4 py-2 text-[0.95rem] font-medium tracking-wide text-white transition-all duration-200"
+          className="desktop-nav cursor-pointer bg-tertiary hover:bg-secondary rounded-sm px-4 py-2 text-[0.95rem] font-medium tracking-wide text-white transition-all duration-200"
         >
           Contact
         </Link>
@@ -69,7 +69,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="rounded px-4 py-3 text-base text-white/90 no-underline transition-all duration-200 hover:bg-white/10"
+              className="cursor-pointer rounded px-4 py-3 text-base text-white/90 no-underline transition-all duration-200 hover:bg-white/10"
             >
               {link.label}
             </Link>
@@ -77,7 +77,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={() => setIsOpen(false)}
-            className="bg-tertiary hover:bg-secondary rounded-sm px-4 py-3 text-base font-medium text-white no-underline transition-all duration-200"
+            className="cursor-pointer bg-tertiary hover:bg-secondary rounded-sm px-4 py-3 text-base font-medium text-white no-underline transition-all duration-200"
           >
             Contact
           </Link>

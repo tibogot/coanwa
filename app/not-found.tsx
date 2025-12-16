@@ -32,7 +32,7 @@ export default function NotFound() {
 
         <Link
           href="/"
-          className="font-pp-neue-montreal group relative inline-flex items-center gap-2 rounded-lg border-2 border-black bg-white px-8 py-4 text-base font-medium text-black transition-all duration-300 hover:bg-black hover:text-white md:text-lg"
+          className="font-pp-neue-montreal cursor-pointer group relative inline-flex items-center gap-2 rounded-lg border-2 border-black bg-white px-8 py-4 text-base font-medium text-black transition-all duration-300 hover:bg-black hover:text-white md:text-lg"
         >
           <span>Return Home</span>
           <svg

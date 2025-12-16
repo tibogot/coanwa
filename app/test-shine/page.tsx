@@ -104,7 +104,7 @@ export default function TestShinePage() {
             enablePointer={true}
             autoAnimate={false}
           >
-            <button className="font-semibold text-white">
+            <button className="cursor-pointer font-semibold text-white">
               Click Me (with shine effect)
             </button>
           </MaskedBorderShine>
