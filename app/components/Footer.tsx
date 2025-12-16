@@ -6,7 +6,7 @@ import { Link } from "next-view-transitions";
 export default function Footer() {
   return (
     <footer
-      className="relative h-[80vh] w-full"
+      className="footer-transition relative h-[80vh] w-full"
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
       <div className="relative -top-[100vh] h-[calc(100vh+80vh)]">

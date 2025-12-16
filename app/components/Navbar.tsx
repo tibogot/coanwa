@@ -15,7 +15,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-8 left-1/2 z-100 flex w-full max-w-4xl -translate-x-1/2 items-center rounded-md bg-gradient-to-b from-black/10 via-black/10 to-black/5 px-6 py-2 backdrop-blur-xl">
+    <nav className="navbar-transition fixed top-8 left-1/2 z-100 flex w-full max-w-4xl -translate-x-1/2 items-center rounded-md bg-gradient-to-b from-black/10 via-black/10 to-black/5 px-6 py-2 backdrop-blur-xl">
       {/* Left Section - Logo */}
       <div className="flex flex-1 items-center">
         <Link href="/" className="flex cursor-pointer items-center">

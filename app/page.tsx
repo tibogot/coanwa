@@ -31,16 +31,24 @@ export default function Home() {
         {/* Hero Content */}
         <div className="relative z-10 flex h-full w-full items-end">
           <div className="w-full px-4 pb-8 md:px-8 md:pb-12">
-            <p className="font-pp-neue-montreal text-2xl text-white md:text-6xl">
-              Building excellence
-              <br />
-              across West Africa
-            </p>
-            <p className="font-pp-neue-montreal mt-4 max-w-2xl text-base text-white/80 md:mt-6 md:text-lg lg:text-xl">
-              Three decades of expertise in construction and engineering,
-              delivering integrated solutions that shape the future of
-              infrastructure.
-            </p>
+            <div className="flex flex-col items-start">
+              <TextReveal
+                animateOnScroll={true}
+                blockColor="white"
+                stagger={0.15}
+                duration={0.8}
+              >
+                <p className="font-pp-neue-montreal mb-8 max-w-4xl text-left text-4xl text-white md:text-6xl">
+                  Road Construction & Civil Engineering Excellence in
+                  Nigeria{" "}
+                </p>
+                <p className="font-pp-neue-montreal max-w-2xl text-left text-base leading-relaxed text-white/80 md:text-xl">
+                  Your Partner for Highways, Urban Roads & Infrastructure
+                  Projects
+                </p>
+              </TextReveal>
+              <div className="text-left"></div>
+            </div>
           </div>
         </div>
       </section>
@@ -50,7 +58,7 @@ export default function Home() {
       <section className="w-full bg-white px-4 py-30 md:px-8">
         <div className="flex h-full max-w-7xl flex-col">
           <div className="text-left">
-            <TextReveal blockColor="#ff4d00" animateOnScroll={true}>
+            <TextReveal blockColor="#0f121d" animateOnScroll={true}>
               <h2 className="font-pp-neue-montreal text-left text-4xl text-black md:text-5xl lg:text-6xl">
                 A construction <span className="text-secondary">company,</span>
                 <br />
@@ -60,26 +68,29 @@ export default function Home() {
               </h2>
             </TextReveal>
           </div>
-          <div className="mt-32 flex flex-col items-start gap-6 md:mt-48">
-            <p className="font-pp-neue-montreal max-w-2xl text-base text-black/80 md:text-lg lg:text-xl">
-              Three decades of expertise in construction and engineering across
-              West Africa.
-              <br />
-              We deliver integrated solutions from planning to execution.
-              <br />
-              Quality, innovation, and reliability in every project we
-              undertake.
-              <br />
-              Transforming infrastructure and shaping the future of the region.
-              <br />
-              Your trusted partner for comprehensive construction services.
-            </p>
-            <Link
-              href="/company"
-              className="font-pp-neue-montreal hover:text-secondary flex cursor-pointer items-center gap-2 text-sm text-black transition-colors"
-            >
-              Learn more <ArrowRight size={16} />
-            </Link>
+          <div className="mt-32 flex justify-end md:mt-48">
+            <div className="flex flex-col gap-6">
+              <p className="font-pp-neue-montreal max-w-2xl text-left text-base text-black/80 md:text-lg lg:text-xl">
+                Three decades of expertise in construction and engineering
+                across West Africa.
+                <br />
+                We deliver integrated solutions from planning to execution.
+                <br />
+                Quality, innovation, and reliability in every project we
+                undertake.
+                <br />
+                Transforming infrastructure and shaping the future of the
+                region.
+                <br />
+                Your trusted partner for comprehensive construction services.
+              </p>
+              <Link
+                href="/company"
+                className="font-pp-neue-montreal hover:text-secondary flex cursor-pointer items-center gap-2 text-sm text-black transition-colors"
+              >
+                Learn more <ArrowRight size={16} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
