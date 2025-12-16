@@ -5,28 +5,14 @@ export default function TestPage() {
   return (
     <>
       <ShaderBackground />
-      <main
-        style={{
-          position: "relative",
-          zIndex: 1,
-          minHeight: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "2rem",
-        }}
-      >
+      <main className="relative z-[1] flex min-h-screen flex-col items-center justify-center p-8">
         <Image
           src="/logohero.svg"
           alt="Coan Logo"
           width={500}
           height={129}
           priority
-          style={{
-            maxWidth: "90vw",
-            height: "auto",
-          }}
+          className="max-w-[90vw] h-auto"
         />
       </main>
     </>

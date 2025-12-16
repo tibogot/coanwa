@@ -1,20 +1,21 @@
 "use client";
 
 import TextReveal from "../components/TextReveal";
+import Image from "next/image";
 
 export default function Gallery() {
   return (
     <section className="relative h-screen w-full">
       {/* Background Image */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: "url('/joshua-oluwagbemiga.webp')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      />
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/joshua-oluwagbemiga.webp"
+          alt="Background"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
 
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 z-[1] bg-black/20" />

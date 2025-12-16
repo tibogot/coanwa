@@ -1,20 +1,21 @@
 "use client";
 
 import TextReveal from "../components/TextReveal";
+import Image from "next/image";
 
 export default function Projects() {
   return (
     <section className="relative h-screen w-full">
       {/* Background Image */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: "url('/sticky-cards/stickycard-3.webp')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      />
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/sticky-cards/stickycard-3.webp"
+          alt="Background"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
       
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 z-[1] bg-black/20" />
