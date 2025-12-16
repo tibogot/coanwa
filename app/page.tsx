@@ -141,7 +141,7 @@ export default function Home() {
       <section className="relative h-screen w-full">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/sticky-cards/stickycard-1.webp"
+            src="/vitalis-nwenyi.webp"
             alt="Background"
             fill
             className="object-cover"
