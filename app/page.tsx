@@ -8,7 +8,7 @@ import FAQ from "./components/FAQ";
 // import GlassCards from "./components/GlassCards";
 import { Leva } from "leva";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { ArrowRight } from "lucide-react";
 
 export default function Home() {

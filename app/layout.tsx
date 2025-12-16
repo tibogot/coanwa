@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SmoothScroll from "./components/SmoothScroll";
 import ScrollToTop from "./components/ScrollToTop";
+import { ViewTransitions } from "next-view-transitions";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,17 +37,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${ppNeueMontreal.variable} antialiased`}
-      >
-        <SmoothScroll>
-          <ScrollToTop />
-          <Navbar />
-          {children}
-          <Footer />
-        </SmoothScroll>
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} ${ppNeueMontreal.variable} antialiased`}
+        >
+          <SmoothScroll>
+            <ScrollToTop />
+            <Navbar />
+            {children}
+            <Footer />
+          </SmoothScroll>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }
