@@ -58,7 +58,7 @@ export default function Footer() {
                     <li>
                       <Link
                         href="/company"
-                        className="hover:text-secondary text-white/80 transition-colors"
+                        className="text-white/80 transition-opacity hover:opacity-100"
                       >
                         Company
                       </Link>
@@ -66,7 +66,7 @@ export default function Footer() {
                     <li>
                       <Link
                         href="/projects"
-                        className="hover:text-secondary text-white/80 transition-colors"
+                        className="text-white/80 transition-opacity hover:opacity-100"
                       >
                         Projects
                       </Link>
@@ -74,7 +74,7 @@ export default function Footer() {
                     <li>
                       <Link
                         href="/services"
-                        className="hover:text-secondary text-white/80 transition-colors"
+                        className="text-white/80 transition-opacity hover:opacity-100"
                       >
                         Services
                       </Link>
@@ -82,7 +82,7 @@ export default function Footer() {
                     <li>
                       <Link
                         href="/gallery"
-                        className="hover:text-secondary text-white/80 transition-colors"
+                        className="text-white/80 transition-opacity hover:opacity-100"
                       >
                         Gallery
                       </Link>
@@ -90,7 +90,7 @@ export default function Footer() {
                     <li>
                       <Link
                         href="/contact"
-                        className="hover:text-secondary text-white/80 transition-colors"
+                        className="text-white/80 transition-opacity hover:opacity-100"
                       >
                         Contact
                       </Link>
@@ -103,7 +103,7 @@ export default function Footer() {
                     <li>
                       <a
                         href="mailto:info@coanwa.com"
-                        className="hover:text-secondary text-white/80 transition-colors"
+                        className="text-white/80 transition-opacity hover:opacity-100"
                       >
                         info@coanwa.com
                       </a>
@@ -111,7 +111,7 @@ export default function Footer() {
                     <li>
                       <a
                         href="tel:+2348037869334"
-                        className="hover:text-secondary text-white/80 transition-colors"
+                        className="text-white/80 transition-opacity hover:opacity-100"
                       >
                         +234 803 786 9334
                       </a>
@@ -119,7 +119,7 @@ export default function Footer() {
                     <li>
                       <a
                         href="tel:+2347033668523"
-                        className="hover:text-secondary text-white/80 transition-colors"
+                        className="text-white/80 transition-opacity hover:opacity-100"
                       >
                         +234 703 366 8523
                       </a>
@@ -143,7 +143,7 @@ export default function Footer() {
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-secondary text-white/60 transition-colors"
+                  className="text-white/60 transition-opacity hover:opacity-100"
                   aria-label="LinkedIn"
                 >
                   <svg
@@ -159,7 +159,7 @@ export default function Footer() {
                   href="https://twitter.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-secondary text-white/60 transition-colors"
+                  className="text-white/60 transition-opacity hover:opacity-100"
                   aria-label="Twitter"
                 >
                   <svg
@@ -175,7 +175,7 @@ export default function Footer() {
                   href="https://facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-secondary text-white/60 transition-colors"
+                  className="text-white/60 transition-opacity hover:opacity-100"
                   aria-label="Facebook"
                 >
                   <svg
