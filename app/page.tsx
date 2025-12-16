@@ -1,39 +1,53 @@
 "use client";
 
-import ShaderBackground from "./components/ShaderBackground4";
+// import ShaderBackground from "./components/ShaderBackground4";
 import TextReveal from "./components/TextReveal";
 import StickyCards3D from "./components/StickyCards3D";
 import ProfilesTicker from "./components/ProfilesTicker";
 import { Leva } from "leva";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <>
       <Leva hidden />
-      <ShaderBackground />
-      {/* Hero Section - on top of ShaderBackground */}
-      <section className="relative z-10 flex h-screen w-full items-end">
-        <div className="w-full px-4 pb-8 md:px-8 md:pb-12">
-          <p className="font-pp-neue-montreal text-2xl text-white md:text-6xl">
-            Building excellence
-            <br />
-            across West Africa
-          </p>
-          <p className="font-pp-neue-montreal mt-4 max-w-2xl text-base text-white/80 md:mt-6 md:text-lg lg:text-xl">
-            Three decades of expertise in construction and engineering,
-            delivering integrated solutions that shape the future of
-            infrastructure.
-          </p>
+      {/* <ShaderBackground /> */}
+      {/* Hero Section with Image Background */}
+      <section className="relative h-screen w-full">
+        {/* Background Image - 100vh, not fixed */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/sticky-cards/stickycard-1.webp"
+            alt="Background"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        {/* Hero Content */}
+        <div className="relative z-10 flex h-full w-full items-end">
+          <div className="w-full px-4 pb-8 md:px-8 md:pb-12">
+            <p className="font-pp-neue-montreal text-2xl text-white md:text-6xl">
+              Building excellence
+              <br />
+              across West Africa
+            </p>
+            <p className="font-pp-neue-montreal mt-4 max-w-2xl text-base text-white/80 md:mt-6 md:text-lg lg:text-xl">
+              Three decades of expertise in construction and engineering,
+              delivering integrated solutions that shape the future of
+              infrastructure.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Sticky Cards Section */}
       {/* <StickyCards /> */}
       <section className="w-full bg-white px-4 py-30 md:px-8">
-        <div className="mx-auto flex h-full max-w-7xl flex-col">
-          <div className="text-center">
+        <div className="flex h-full max-w-7xl flex-col">
+          <div className="text-left">
             <TextReveal blockColor="#ff4d00" animateOnScroll={true}>
-              <h2 className="font-pp-neue-montreal text-center text-4xl text-black md:text-5xl lg:text-6xl">
+              <h2 className="font-pp-neue-montreal text-left text-4xl text-black md:text-5xl lg:text-6xl">
                 A construction <span className="text-secondary">company,</span>
                 <br />
                 offering integrated solution and
@@ -181,6 +195,19 @@ export default function Home() {
           </div>
         </div>
         <ProfilesTicker />
+      </section>
+
+      {/* Full Width Background Image Section */}
+      <section className="relative h-screen w-full">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/sticky-cards/stickycard-1.webp"
+            alt="Background"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
       </section>
     </>
   );

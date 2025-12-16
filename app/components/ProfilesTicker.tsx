@@ -29,8 +29,7 @@ const PROFILES: ProfileType[] = [
     id: 1,
     name: "Chief Christian Nwogu",
     title: "Chairman",
-    image:
-      "https://coanwaltd.com/wp-content/uploads/2022/04/Chairman-scaled-tiny.jpg",
+    image: "/Chairman-scaled-tiny.jpg",
     countries: ["Allemagne", "Luxembourg"],
   },
   {

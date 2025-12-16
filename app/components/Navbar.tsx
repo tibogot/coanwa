@@ -5,8 +5,8 @@ import Link from "next/link";
 import { useState } from "react";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
+  { href: "/company", label: "Company" },
+  { href: "/projects", label: "Projects" },
   { href: "/services", label: "Services" },
   { href: "/gallery", label: "Gallery" },
 ];
@@ -15,15 +15,15 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 right-0 left-0 z-100 flex items-center px-8 py-4">
+    <nav className="fixed top-8 left-1/2 z-100 flex w-full max-w-4xl -translate-x-1/2 items-center rounded-md bg-gradient-to-b from-black/10 via-black/10 to-black/5 px-6 py-2 backdrop-blur-xl">
       {/* Left Section - Logo */}
       <div className="flex flex-1 items-center">
         <Link href="/" className="flex items-center">
           <Image
-            src="/logohero.svg"
+            src="/logovintage.svg"
             alt="COAN Logo"
-            width={140}
-            height={36}
+            width={110}
+            height={28}
             priority
           />
         </Link>
@@ -35,7 +35,7 @@ export default function Navbar() {
           <Link
             key={link.href}
             href={link.href}
-            className="py-2 text-[0.95rem] tracking-wide text-white/90 transition-colors duration-200 hover:text-[#FF8000]"
+            className="py-1 text-[0.95rem] tracking-wide text-white/90 transition-colors duration-200 hover:text-white/60"
           >
             {link.label}
           </Link>
@@ -47,7 +47,7 @@ export default function Navbar() {
         {/* Contact Link - Desktop */}
         <Link
           href="/contact"
-          className="desktop-nav py-2 text-[0.95rem] tracking-wide text-white/90 transition-colors duration-200 hover:text-[#FF8000]"
+          className="desktop-nav bg-tertiary hover:bg-secondary rounded-sm px-4 py-2 text-[0.95rem] font-medium tracking-wide text-white transition-all duration-200"
         >
           Contact
         </Link>
@@ -63,7 +63,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="mobile-nav absolute top-full right-0 left-0 flex flex-col gap-2 bg-black/95 p-4 backdrop-blur-xl">
+        <div className="mobile-nav absolute top-full right-0 left-0 mt-2 flex flex-col gap-2 rounded-md bg-black/30 p-4 backdrop-blur-xl">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -77,7 +77,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={() => setIsOpen(false)}
-            className="rounded px-4 py-3 text-base text-white/90 no-underline transition-all duration-200 hover:bg-white/10"
+            className="bg-tertiary hover:bg-secondary rounded-sm px-4 py-3 text-base font-medium text-white no-underline transition-all duration-200"
           >
             Contact
           </Link>

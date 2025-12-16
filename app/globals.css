@@ -5,6 +5,8 @@
   --foreground: #171717;
   --primary: #f6f0eb;
   --secondary: #ff4d00;
+  --tertiary: #0f121d;
+  --orange: #ff3b00;
   /* Aliases for StickyCards component */
   --bg: var(--background);
   --fg: var(--foreground);
@@ -15,6 +17,8 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-orange: var(--orange);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-pp-neue-montreal: var(--font-pp-neue-montreal);
