@@ -230,6 +230,13 @@ function GradientPlane() {
       color3: "#FF6B35",
       color4: "#050D18",
     },
+    "Orange Metal": {
+      // Same palette as "Orange Dark" (the metallic is set separately)
+      color1: "#FF8000",
+      color2: "#0A1628",
+      color3: "#FF6B35",
+      color4: "#050D18",
+    },
     "Orange Light": {
       color1: "#FF8000",
       color2: "#E8E8E8",
@@ -246,11 +253,16 @@ function GradientPlane() {
 
   // Leva controls
   const [colors, setColors] = useControls("🎨 Colors", () => ({
+    // Default: Orange Metal (same palette as "Orange Dark")
     color1: { value: "#FF8000", label: "Accent 1" },
-    color2: { value: "#FF8000", label: "Dark 1" },
-    color3: { value: "#FFB366", label: "Accent 2" },
-    color4: { value: "#FFB366", label: "Dark 2" },
+    color2: { value: "#0A1628", label: "Dark 1" },
+    color3: { value: "#FF6B35", label: "Accent 2" },
+    color4: { value: "#050D18", label: "Dark 2" },
     " ": button(() => {}), // Spacer
+    "Orange Metal": button(() => {
+      setColors(colorPresets["Orange Metal"]);
+      setMetallic({ metallic: 0.55 });
+    }),
     "Orange Final": button(() => {
       setColors(colorPresets["Orange Final"]);
     }),
@@ -364,9 +376,9 @@ function GradientPlane() {
   });
 
   // Metallic controls
-  const metallic = useControls("✨ Metallic Effect", {
+  const [metallic, setMetallic] = useControls("✨ Metallic Effect", () => ({
     metallic: {
-      value: 0.0,
+      value: 0.55,
       min: 0.0,
       max: 1.0,
       step: 0.01,
@@ -435,7 +447,7 @@ function GradientPlane() {
       step: 0.01,
       label: "Brightness",
     },
-  });
+  }));
 
   const uniforms = useMemo(
     () => ({
