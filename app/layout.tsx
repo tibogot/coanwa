@@ -25,6 +25,12 @@ const ppNeueMontreal = localFont({
   adjustFontFallback: "Arial",
 });
 
+const ppNeueMontrealMono = localFont({
+  src: "./fonts/PPNeueMontrealMono-Book.otf",
+  display: "swap",
+  variable: "--font-pp-neue-montreal-mono",
+});
+
 export const metadata: Metadata = {
   title: "COAN West Africa Limited | Construction & Engineering",
   description:
@@ -40,7 +46,7 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} ${ppNeueMontreal.variable} antialiased`}
+          className={`${geistSans.variable} ${geistMono.variable} ${ppNeueMontreal.variable} ${ppNeueMontrealMono.variable} antialiased`}
         >
           <SmoothScroll>
             <ScrollToTop />

@@ -140,6 +140,9 @@ export default function Home() {
         <div className="relative z-10 mx-auto flex h-full w-full flex-col">
           <div className="text-left">
             <TextReveal blockColor="#ff3300" animateOnScroll={true}>
+              <p className="font-pp-neue-montreal-mono text-orange mb-8 text-xs md:text-sm">
+                ABOUT
+              </p>
               <h2 className="font-pp-neue-montreal text-orange text-left text-4xl md:text-5xl lg:text-6xl">
                 A construction company,
                 <br />
@@ -185,7 +188,7 @@ export default function Home() {
               <div
                 data-count="89"
                 data-suffix="%"
-                className="font-pp-neue-montreal text-orange text-6xl font-medium tracking-tight md:text-7xl lg:text-8xl"
+                className="font-pp-neue-montreal text-orange text-6xl tracking-tight md:text-7xl lg:text-8xl"
               >
                 89%
               </div>
@@ -197,7 +200,7 @@ export default function Home() {
               <div
                 data-count="34"
                 data-suffix="+"
-                className="font-pp-neue-montreal text-orange text-6xl font-medium tracking-tight md:text-7xl lg:text-8xl"
+                className="font-pp-neue-montreal text-orange text-6xl tracking-tight md:text-7xl lg:text-8xl"
               >
                 34+
               </div>
@@ -209,7 +212,7 @@ export default function Home() {
               <div
                 data-count="48"
                 data-suffix="+"
-                className="font-pp-neue-montreal text-orange text-6xl font-medium tracking-tight md:text-7xl lg:text-8xl"
+                className="font-pp-neue-montreal text-orange text-6xl tracking-tight md:text-7xl lg:text-8xl"
               >
                 48+
               </div>
@@ -238,7 +241,7 @@ export default function Home() {
               stagger={0.15}
               duration={0.8}
             >
-              <p className="font-pp-neue-montreal mb-8 max-w-2xl text-left text-4xl font-medium text-black md:text-5xl lg:text-6xl">
+              <p className="font-pp-neue-montreal mb-8 max-w-2xl text-left text-4xl text-black md:text-5xl lg:text-6xl">
                 Our Team
               </p>
             </TextReveal>

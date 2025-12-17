@@ -7,7 +7,7 @@ export default function NotFound() {
       <div className="mx-auto flex max-w-4xl flex-col items-center justify-center text-center">
         <div className="mb-8">
           <TextReveal blockColor="#ff4d00" animateOnScroll={true}>
-            <h1 className="font-pp-neue-montreal text-6xl font-medium text-black md:text-8xl lg:text-9xl">
+            <h1 className="font-pp-neue-montreal text-6xl text-black md:text-8xl lg:text-9xl">
               404
             </h1>
           </TextReveal>
@@ -32,7 +32,7 @@ export default function NotFound() {
 
         <Link
           href="/"
-          className="font-pp-neue-montreal cursor-pointer group relative inline-flex items-center gap-2 rounded-lg border-2 border-black bg-white px-8 py-4 text-base font-medium text-black transition-all duration-300 hover:bg-black hover:text-white md:text-lg"
+          className="font-pp-neue-montreal cursor-pointer group relative inline-flex items-center gap-2 rounded-lg border-2 border-black bg-white px-8 py-4 text-base text-black transition-all duration-300 hover:bg-black hover:text-white md:text-lg"
         >
           <span>Return Home</span>
           <svg

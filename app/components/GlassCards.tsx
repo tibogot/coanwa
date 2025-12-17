@@ -9,7 +9,7 @@ export default function GlassCards() {
         {/* Section Header */}
         <div className="mb-16 text-center md:mb-24">
           <TextReveal blockColor="#ffffff" stagger={0.15} duration={0.75}>
-            <h2 className="font-pp-neue-montreal mb-6 text-4xl font-medium text-white md:text-5xl lg:text-6xl">
+            <h2 className="font-pp-neue-montreal mb-6 text-4xl text-white md:text-5xl lg:text-6xl">
               Our Services
             </h2>
           </TextReveal>
@@ -24,7 +24,7 @@ export default function GlassCards() {
           {/* Card 1 */}
           <div className="group relative overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-white/15">
             <div className="mb-4 text-3xl">🏗️</div>
-            <h3 className="font-pp-neue-montreal mb-3 text-2xl font-medium text-white">
+            <h3 className="font-pp-neue-montreal mb-3 text-2xl text-white">
               Project Management
             </h3>
             <p className="font-pp-neue-montreal text-sm leading-relaxed text-white/70">
@@ -36,7 +36,7 @@ export default function GlassCards() {
           {/* Card 2 */}
           <div className="group relative overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-white/15">
             <div className="mb-4 text-3xl">📐</div>
-            <h3 className="font-pp-neue-montreal mb-3 text-2xl font-medium text-white">
+            <h3 className="font-pp-neue-montreal mb-3 text-2xl text-white">
               Design & Engineering
             </h3>
             <p className="font-pp-neue-montreal text-sm leading-relaxed text-white/70">
@@ -48,7 +48,7 @@ export default function GlassCards() {
           {/* Card 3 */}
           <div className="group relative overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-white/15">
             <div className="mb-4 text-3xl">🔧</div>
-            <h3 className="font-pp-neue-montreal mb-3 text-2xl font-medium text-white">
+            <h3 className="font-pp-neue-montreal mb-3 text-2xl text-white">
               Quality Assurance
             </h3>
             <p className="font-pp-neue-montreal text-sm leading-relaxed text-white/70">
@@ -60,7 +60,7 @@ export default function GlassCards() {
           {/* Card 4 */}
           <div className="group relative overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-white/15">
             <div className="mb-4 text-3xl">🚛</div>
-            <h3 className="font-pp-neue-montreal mb-3 text-2xl font-medium text-white">
+            <h3 className="font-pp-neue-montreal mb-3 text-2xl text-white">
               Logistics & Supply
             </h3>
             <p className="font-pp-neue-montreal text-sm leading-relaxed text-white/70">
@@ -72,7 +72,7 @@ export default function GlassCards() {
           {/* Card 5 */}
           <div className="group relative overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-white/15">
             <div className="mb-4 text-3xl">👷</div>
-            <h3 className="font-pp-neue-montreal mb-3 text-2xl font-medium text-white">
+            <h3 className="font-pp-neue-montreal mb-3 text-2xl text-white">
               Skilled Workforce
             </h3>
             <p className="font-pp-neue-montreal text-sm leading-relaxed text-white/70">
@@ -84,7 +84,7 @@ export default function GlassCards() {
           {/* Card 6 */}
           <div className="group relative overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-white/15">
             <div className="mb-4 text-3xl">📊</div>
-            <h3 className="font-pp-neue-montreal mb-3 text-2xl font-medium text-white">
+            <h3 className="font-pp-neue-montreal mb-3 text-2xl text-white">
               Cost Optimization
             </h3>
             <p className="font-pp-neue-montreal text-sm leading-relaxed text-white/70">

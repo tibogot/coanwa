@@ -12,7 +12,7 @@ export default function Contact() {
           stagger={0.15}
           duration={0.8}
         >
-          <h1 className="font-pp-neue-montreal text-5xl font-medium text-black md:text-6xl lg:text-7xl">
+          <h1 className="font-pp-neue-montreal text-5xl text-black md:text-6xl lg:text-7xl">
             Contact
           </h1>
         </TextReveal>
@@ -20,4 +20,3 @@ export default function Contact() {
     </section>
   );
 }
-

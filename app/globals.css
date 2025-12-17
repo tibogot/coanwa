@@ -22,6 +22,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-pp-neue-montreal: var(--font-pp-neue-montreal);
+  --font-pp-neue-montreal-mono: var(--font-pp-neue-montreal-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,6 +39,20 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Opt-in utility: use your PP Neue Montreal Mono locally where you want */
+.font-pp-neue-montreal-mono {
+  font-family:
+    var(--font-pp-neue-montreal-mono),
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    "Courier New",
+    monospace;
 }
 
 /* Nigeria map hotspot pulse overlay (4 dots) */

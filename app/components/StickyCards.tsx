@@ -113,7 +113,7 @@ const StickyCards = () => {
 
             {/* Title and Description */}
             <div className="flex flex-col gap-8 max-[1000px]:gap-6">
-              <h2 className="font-pp-neue-montreal text-5xl leading-tight font-medium md:text-6xl lg:text-7xl">
+              <h2 className="font-pp-neue-montreal text-5xl leading-tight md:text-6xl lg:text-7xl">
                 {cardData.title}
               </h2>
 

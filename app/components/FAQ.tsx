@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import TextReveal from "./TextReveal";
+import { gsap } from "@/lib/gsapConfig";
 
 interface FAQItem {
   question: string;
@@ -43,27 +44,71 @@ const FAQ_DATA: FAQItem[] = [
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const baseId = useId();
+
+  const contentRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const innerRefs = useRef<Array<HTMLDivElement | null>>([]);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  // Initialize panels closed on mount.
+  useEffect(() => {
+    FAQ_DATA.forEach((_, i) => {
+      const content = contentRefs.current[i];
+      const inner = innerRefs.current[i];
+      if (!content || !inner) return;
+
+      gsap.set(content, { height: 0, opacity: 0 });
+      gsap.set(inner, { y: -4 });
+    });
+  }, []);
+
+  // Smooth open/close animation driven by GSAP (height: 0 <-> auto).
+  useEffect(() => {
+    FAQ_DATA.forEach((_, i) => {
+      const content = contentRefs.current[i];
+      const inner = innerRefs.current[i];
+      if (!content || !inner) return;
+
+      gsap.killTweensOf([content, inner]);
+
+      const isOpen = openIndex === i;
+      if (isOpen) {
+        gsap.to(content, {
+          height: "auto",
+          opacity: 1,
+          duration: 0.45,
+          ease: "power2.out",
+        });
+        gsap.to(inner, {
+          y: 0,
+          duration: 0.45,
+          ease: "power2.out",
+        });
+      } else {
+        gsap.to(content, {
+          height: 0,
+          opacity: 0,
+          duration: 0.35,
+          ease: "power2.inOut",
+        });
+        gsap.to(inner, {
+          y: -4,
+          duration: 0.35,
+          ease: "power2.inOut",
+        });
+      }
+    });
+  }, [openIndex]);
+
   return (
-    <section className="relative w-full bg-white py-24 md:py-32">
+    <section className="relative w-full bg-[#EAEAEA] py-24 md:py-32">
       <div className="px-4 md:px-8">
-        {/* Section Header */}
-        <div className="mb-16 md:mb-24">
-          <div className="flex flex-col items-start">
-            <TextReveal
-              animateOnScroll={true}
-              blockColor="#ff4d00"
-              stagger={0.15}
-              duration={0.8}
-            >
-              <h2 className="font-pp-neue-montreal mb-8 max-w-2xl text-left text-4xl font-medium text-black md:text-5xl lg:text-6xl">
-                Frequently Asked Questions
-              </h2>
-            </TextReveal>
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
+          {/* Left column (desktop): section label */}
+          <div className="md:col-span-4">
             <div className="text-left">
               <TextReveal
                 animateOnScroll={true}
@@ -71,63 +116,94 @@ export default function FAQ() {
                 stagger={0.15}
                 duration={0.8}
               >
-                <p className="font-pp-neue-montreal max-w-2xl text-left text-base leading-relaxed text-black/80 sm:text-lg md:text-xl">
-                  Find answers to common questions about our construction
-                  services, processes, and expertise.
+                <p className="font-pp-neue-montreal-mono text-xs text-black md:text-sm">
+                  FAQ
                 </p>
               </TextReveal>
             </div>
           </div>
-        </div>
 
-        {/* FAQ Items */}
-        <div className="space-y-4">
-          {FAQ_DATA.map((faq, index) => (
-            <div
-              key={index}
-              className="group overflow-hidden rounded-lg border border-black/10 bg-white transition-all duration-300 hover:border-black/20"
-            >
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="flex w-full cursor-pointer items-center justify-between px-6 py-6 text-left transition-colors duration-200 hover:bg-black/5 md:px-8 md:py-8"
-                aria-expanded={openIndex === index}
+          {/* Right column: title + accordion */}
+          <div className="md:col-span-8">
+            <div className="mb-10 md:mb-14">
+              <TextReveal
+                animateOnScroll={true}
+                blockColor="#ff4d00"
+                stagger={0.15}
+                duration={0.8}
               >
-                <h3 className="font-pp-neue-montreal pr-8 text-lg font-medium text-black md:text-xl lg:text-2xl">
-                  {faq.question}
-                </h3>
-                <div className="flex-shrink-0">
-                  <svg
-                    className={`h-6 w-6 transform text-black/60 transition-transform duration-300 ${
-                      openIndex === index ? "rotate-180" : ""
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </div>
-              </button>
-              <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  openIndex === index
-                    ? "max-h-[1000px] opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
-              >
-                <div className="px-6 pb-6 md:px-8 md:pb-8">
-                  <p className="font-pp-neue-montreal text-base leading-relaxed text-black/70 md:text-lg">
-                    {faq.answer}
+                <h2 className="font-pp-neue-montreal mb-6 text-left text-4xl text-black md:text-4xl">
+                  Questions, answered.
+                </h2>
+              </TextReveal>
+              {/* <div className="text-left">
+                <TextReveal
+                  animateOnScroll={true}
+                  blockColor="#ff4d00"
+                  stagger={0.15}
+                  duration={0.8}
+                >
+                  <p className="font-pp-neue-montreal text-left text-base leading-relaxed text-black/80 sm:text-lg md:text-xl">
+                    Find answers to common questions about our construction
+                    services, processes, and expertise.
                   </p>
-                </div>
-              </div>
+                </TextReveal>
+              </div> */}
             </div>
-          ))}
+
+            {/* FAQ Items */}
+            <div className="divide-y divide-black/15">
+              {FAQ_DATA.map((faq, index) => (
+                <div key={index} className="group">
+                  <button
+                    onClick={() => toggleFAQ(index)}
+                    className="flex w-full cursor-pointer items-center justify-between py-4 text-left transition-colors duration-200 hover:text-black/80 md:py-6"
+                    aria-expanded={openIndex === index}
+                    aria-controls={`${baseId}-faq-panel-${index}`}
+                  >
+                    <h3 className="font-pp-neue-montreal pr-8 text-base text-black md:text-lg lg:text-xl">
+                      {faq.question}
+                    </h3>
+                    <div className="shrink-0">
+                      <svg
+                        className={`text-orange h-6 w-6 transform transition-transform duration-300 ${
+                          openIndex === index ? "rotate-180" : ""
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </div>
+                  </button>
+                  <div
+                    id={`${baseId}-faq-panel-${index}`}
+                    ref={(el) => {
+                      contentRefs.current[index] = el;
+                    }}
+                    className="overflow-hidden will-change-[height,opacity]"
+                  >
+                    <div
+                      ref={(el) => {
+                        innerRefs.current[index] = el;
+                      }}
+                      className="pb-4 md:pb-6"
+                    >
+                      <p className="font-pp-neue-montreal text-base leading-relaxed text-black/70 md:text-lg">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
