@@ -62,7 +62,7 @@ export default function Home() {
       <Leva hidden />
       <ShaderBackground />
       {/* Hero Section with Image Background */}
-      <section className="relative h-screen w-full">
+      <section className="relative min-h-[100dvh] min-h-[100svh] w-full">
         {/* Bottom-left logo overlay */}
         <div className="pointer-events-none absolute inset-0 z-10 flex items-end justify-start p-6 md:p-10">
           <Image
@@ -232,7 +232,7 @@ export default function Home() {
       {/* <GlassCards /> */}
 
       {/* 100vh Tertiary Section (pre-team spacer) */}
-      <section className="bg-tertiary relative h-screen w-full">
+      <section className="bg-tertiary relative min-h-[100dvh] min-h-[100svh] w-full">
         <div className="mx-auto flex h-full w-full max-w-7xl items-center px-4 md:px-8">
           <p className="font-pp-neue-montreal text-2xl text-white md:text-4xl">
             Tertiary section
@@ -281,10 +281,10 @@ export default function Home() {
       <FAQ />
 
       {/* Spacer Section (shows fixed shader background) */}
-      <section className="relative h-screen w-full bg-transparent" />
+      <section className="relative min-h-[100dvh] min-h-[100svh] w-full bg-transparent" />
 
       {/* Full Width Background Image Section */}
-      <section className="relative h-screen w-full">
+      <section className="relative min-h-[100dvh] min-h-[100svh] w-full">
         <div className="absolute inset-0 z-0">
           <Image
             src="/vitalis-nwenyi.webp"
