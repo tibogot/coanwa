@@ -113,7 +113,7 @@ export default function Home() {
       {/* <StickyCards /> */}
       <section className="relative min-h-[120vh] w-full overflow-hidden bg-[#EAEAEA] px-4 py-30 md:px-8">
         {/* Nigeria map background (watermark) */}
-        <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-80">
+        <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-50">
           <NigeriaMapSvg className="h-full w-full p-10 md:p-16" aria-hidden />
         </div>
 
@@ -231,20 +231,19 @@ export default function Home() {
       {/* Glass Cards Section */}
       {/* <GlassCards /> */}
 
+      {/* 100vh Tertiary Section (pre-team spacer) */}
+      <section className="bg-tertiary relative h-screen w-full">
+        <div className="mx-auto flex h-full w-full max-w-7xl items-center px-4 md:px-8">
+          <p className="font-pp-neue-montreal text-2xl text-white md:text-4xl">
+            Tertiary section
+          </p>
+        </div>
+      </section>
+
       {/* Profiles Ticker Section */}
-      <section className="relative w-full bg-white py-24 md:py-32">
+      <section className="relative w-full bg-[#EAEAEA] py-24 md:py-32">
         <div className="mb-16 px-4 md:mb-24 md:px-8">
           <div className="flex flex-col items-start">
-            <TextReveal
-              animateOnScroll={true}
-              blockColor="#ff4d00"
-              stagger={0.15}
-              duration={0.8}
-            >
-              <p className="font-pp-neue-montreal mb-8 max-w-2xl text-left text-4xl text-black md:text-5xl lg:text-6xl">
-                Our Team
-              </p>
-            </TextReveal>
             <div className="text-left">
               <TextReveal
                 animateOnScroll={true}
@@ -252,7 +251,22 @@ export default function Home() {
                 stagger={0.15}
                 duration={0.8}
               >
-                <p className="font-pp-neue-montreal max-w-2xl text-left text-base leading-relaxed text-black/80 sm:text-lg md:text-xl">
+                <p className="font-pp-neue-montreal-mono text-orange mb-6 text-xs md:text-sm">
+                  TEAM
+                </p>
+                <p className="font-pp-neue-montreal text-orange mb-8 max-w-2xl text-left text-4xl md:text-5xl lg:text-6xl">
+                  Our People
+                </p>
+              </TextReveal>
+            </div>
+            <div className="text-left">
+              <TextReveal
+                animateOnScroll={true}
+                blockColor="#ff4d00"
+                stagger={0.15}
+                duration={0.8}
+              >
+                <p className="font-pp-neue-montreal text-orange/80 max-w-2xl text-left text-base leading-relaxed sm:text-lg md:text-xl">
                   Meet the dedicated professionals driving excellence across all
                   our construction and engineering projects.
                 </p>

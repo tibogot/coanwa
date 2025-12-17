@@ -401,10 +401,10 @@ const ProfilesTicker = () => {
                 />
               </div>
               <div className="flex flex-col justify-between px-0 py-4">
-                <h3 className="font-pp-neue-montreal text-lg text-black md:text-xl lg:text-2xl">
+                <h3 className="font-pp-neue-montreal text-orange text-lg md:text-xl lg:text-2xl">
                   {profile.name}
                 </h3>
-                <p className="font-pp-neue-montreal mt-1 text-sm text-black/70 md:text-base">
+                <p className="font-pp-neue-montreal text-orange/80 mt-1 text-sm md:text-base">
                   {profile.title}
                 </p>
               </div>
@@ -430,10 +430,10 @@ const ProfilesTicker = () => {
 
               {/* Name & Title */}
               <div className="flex flex-col justify-between px-0 py-4">
-                <h3 className="font-pp-neue-montreal text-lg text-black md:text-xl lg:text-2xl">
+                <h3 className="font-pp-neue-montreal text-orange text-lg md:text-xl lg:text-2xl">
                   {profile.name}
                 </h3>
-                <p className="font-pp-neue-montreal mt-1 text-sm text-black/70 md:text-base">
+                <p className="font-pp-neue-montreal text-orange/80 mt-1 text-sm md:text-base">
                   {profile.title}
                 </p>
               </div>

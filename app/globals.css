@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+/* Navbar responsive behavior (must be global to avoid hydration flash) */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .mobile-menu-btn {
+    display: block !important;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -44,15 +54,8 @@ body {
 /* Opt-in utility: use your PP Neue Montreal Mono locally where you want */
 .font-pp-neue-montreal-mono {
   font-family:
-    var(--font-pp-neue-montreal-mono),
-    ui-monospace,
-    SFMono-Regular,
-    Menlo,
-    Monaco,
-    Consolas,
-    "Liberation Mono",
-    "Courier New",
-    monospace;
+    var(--font-pp-neue-montreal-mono), ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 /* Nigeria map hotspot pulse overlay (4 dots) */
@@ -68,11 +71,19 @@ body {
   --mixer: color-mix(in oklch, currentColor, black 45%);
   background: color-mix(in oklch, currentColor, white 10%);
   box-shadow: 0 0 0 2px color-mix(in oklch, currentColor, transparent 65%);
-  filter:
-    saturate(1.25)
-    drop-shadow(0 0 calc((var(--exp, 1) * pow(2, 1)) * 1px) color-mix(in oklch, currentColor, var(--mixer) 25%))
-    drop-shadow(0 0 calc((var(--exp, 1) * pow(2, 3)) * 1px) color-mix(in oklch, currentColor, var(--mixer) 55%))
-    drop-shadow(0 0 calc((var(--exp, 1) * pow(2, 5)) * 1px) color-mix(in oklch, currentColor, var(--mixer) 85%));
+  filter: saturate(1.25)
+    drop-shadow(
+      0 0 calc((var(--exp, 1) * pow(2, 1)) * 1px)
+        color-mix(in oklch, currentColor, var(--mixer) 25%)
+    )
+    drop-shadow(
+      0 0 calc((var(--exp, 1) * pow(2, 3)) * 1px)
+        color-mix(in oklch, currentColor, var(--mixer) 55%)
+    )
+    drop-shadow(
+      0 0 calc((var(--exp, 1) * pow(2, 5)) * 1px)
+        color-mix(in oklch, currentColor, var(--mixer) 85%)
+    );
   animation: hotspotPulse 2.6s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
   will-change: transform, opacity, box-shadow;
   --s: 1;

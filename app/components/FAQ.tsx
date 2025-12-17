@@ -116,7 +116,7 @@ export default function FAQ() {
                 stagger={0.15}
                 duration={0.8}
               >
-                <p className="font-pp-neue-montreal-mono text-xs text-black md:text-sm">
+                <p className="font-pp-neue-montreal-mono text-orange text-xs md:text-sm">
                   FAQ
                 </p>
               </TextReveal>
@@ -132,7 +132,7 @@ export default function FAQ() {
                 stagger={0.15}
                 duration={0.8}
               >
-                <h2 className="font-pp-neue-montreal mb-6 text-left text-4xl text-black md:text-4xl">
+                <h2 className="font-pp-neue-montreal text-orange mb-6 text-left text-4xl md:text-4xl">
                   Questions, answered.
                 </h2>
               </TextReveal>
@@ -152,16 +152,16 @@ export default function FAQ() {
             </div>
 
             {/* FAQ Items */}
-            <div className="divide-y divide-black/15">
+            <div className="divide-orange/25 divide-y">
               {FAQ_DATA.map((faq, index) => (
                 <div key={index} className="group">
                   <button
                     onClick={() => toggleFAQ(index)}
-                    className="flex w-full cursor-pointer items-center justify-between py-4 text-left transition-colors duration-200 hover:text-black/80 md:py-6"
+                    className="text-orange hover:text-orange/80 flex w-full cursor-pointer items-center justify-between py-4 text-left transition-colors duration-200 md:py-6"
                     aria-expanded={openIndex === index}
                     aria-controls={`${baseId}-faq-panel-${index}`}
                   >
-                    <h3 className="font-pp-neue-montreal pr-8 text-base text-black md:text-lg lg:text-xl">
+                    <h3 className="font-pp-neue-montreal text-orange pr-8 text-base md:text-lg lg:text-xl">
                       {faq.question}
                     </h3>
                     <div className="shrink-0">
@@ -195,7 +195,7 @@ export default function FAQ() {
                       }}
                       className="pb-4 md:pb-6"
                     >
-                      <p className="font-pp-neue-montreal text-base leading-relaxed text-black/70 md:text-lg">
+                      <p className="font-pp-neue-montreal text-orange/70 text-base leading-relaxed md:text-lg">
                         {faq.answer}
                       </p>
                     </div>

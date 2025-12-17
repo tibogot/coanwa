@@ -83,17 +83,6 @@ export default function Navbar() {
           </Link>
         </div>
       )}
-
-      <style jsx global>{`
-        @media (max-width: 768px) {
-          .desktop-nav {
-            display: none !important;
-          }
-          .mobile-menu-btn {
-            display: block !important;
-          }
-        }
-      `}</style>
     </nav>
   );
 }
