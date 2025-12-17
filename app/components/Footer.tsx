@@ -43,6 +43,18 @@ export default function Footer() {
                     Text Reveal
                   </Link>
                   <Link
+                    href="/fractal"
+                    className="font-pp-neue-montreal cursor-pointer text-sm text-white/40 transition-colors hover:text-white/60 md:text-base"
+                  >
+                    Fractal
+                  </Link>
+                  <Link
+                    href="/fractal-gradient"
+                    className="font-pp-neue-montreal cursor-pointer text-sm text-white/40 transition-colors hover:text-white/60 md:text-base"
+                  >
+                    Fractal Gradient
+                  </Link>
+                  <Link
                     href="/test-shine"
                     className="font-pp-neue-montreal cursor-pointer text-sm text-white/40 transition-colors hover:text-white/60 md:text-base"
                   >

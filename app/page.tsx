@@ -1,6 +1,6 @@
 "use client";
 
-// import ShaderBackground from "./components/ShaderBackground4";
+import ShaderBackground from "./components/ShaderBackground4";
 import TextReveal from "./components/TextReveal";
 import StickyCards3D from "./components/StickyCards3D";
 import ProfilesTicker from "./components/ProfilesTicker";
@@ -10,26 +10,38 @@ import { Leva } from "leva";
 import Image from "next/image";
 import { Link } from "next-view-transitions";
 import { ArrowRight } from "lucide-react";
+import NigeriaMapSvg from "./components/NigeriaMapSvg";
 
 export default function Home() {
   return (
     <>
       <Leva hidden />
-      {/* <ShaderBackground /> */}
+      <ShaderBackground />
       {/* Hero Section with Image Background */}
       <section className="relative h-screen w-full">
-        {/* Background Image - 100vh, not fixed */}
-        <div className="absolute inset-0 z-0">
+        {/* Center logo overlay */}
+        <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
           <Image
-            src="/sticky-cards/stickycard-1.webp"
+            src="/newlogohero.svg"
+            alt="COANWA"
+            width={850}
+            height={260}
+            priority
+            className="h-auto w-[min(70vw,700px)]"
+          />
+        </div>
+        {/* Background Image - 100vh, not fixed */}
+        {/* <div className="absolute inset-0 z-0">
+          <Image
+            src="/vitalis-nwenyi.webp"
             alt="Background"
             fill
             className="object-cover"
             priority
           />
-        </div>
+        </div> */}
         {/* Hero Content */}
-        <div className="relative z-10 flex h-full w-full items-end">
+        {/* <div className="relative z-10 flex h-full w-full items-end">
           <div className="w-full px-4 pb-8 md:px-8 md:pb-12">
             <div className="flex flex-col items-start">
               <TextReveal
@@ -50,46 +62,101 @@ export default function Home() {
               <div className="text-left"></div>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Sticky Cards Section */}
       {/* <StickyCards /> */}
-      <section className="w-full bg-white px-4 py-30 md:px-8">
-        <div className="flex h-full max-w-7xl flex-col">
+      <section className="relative min-h-[120vh] w-full overflow-hidden bg-[#EAEAEA] px-4 py-30 md:px-8">
+        {/* Nigeria map background (watermark) */}
+        <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-80">
+          <NigeriaMapSvg className="h-full w-full p-10 md:p-16" aria-hidden />
+        </div>
+
+        {/* 4 pulsing hotspots overlay */}
+        {/* <div className="pointer-events-none absolute inset-0 z-1">
+          <span
+            className="map-pulse map-pulse--sm"
+            style={{ left: "22%", top: "52%" }}
+          />
+          <span
+            className="map-pulse map-pulse--md"
+            style={{ left: "43%", top: "38%" }}
+          />
+          <span
+            className="map-pulse map-pulse--lg"
+            style={{ left: "63%", top: "66%" }}
+          />
+          <span
+            className="map-pulse map-pulse--xl"
+            style={{ left: "76%", top: "30%" }}
+          />
+        </div> */}
+
+        <div className="relative z-10 mx-auto flex h-full w-full flex-col">
           <div className="text-left">
-            <TextReveal blockColor="#0f121d" animateOnScroll={true}>
-              <h2 className="font-pp-neue-montreal text-left text-4xl text-black md:text-5xl lg:text-6xl">
-                A construction <span className="text-secondary">company,</span>
+            <TextReveal blockColor="#ff3300" animateOnScroll={true}>
+              <h2 className="font-pp-neue-montreal text-orange text-left text-4xl md:text-5xl lg:text-6xl">
+                A construction company,
                 <br />
                 offering integrated solution and
                 <br />
-                related <span className="text-secondary">services.</span>
+                related services.
               </h2>
             </TextReveal>
           </div>
           <div className="mt-32 flex justify-end md:mt-48">
             <div className="flex flex-col gap-6">
-              <p className="font-pp-neue-montreal max-w-2xl text-left text-base text-black/80 md:text-lg lg:text-xl">
-                Three decades of expertise in construction and engineering
-                across West Africa.
-                <br />
-                We deliver integrated solutions from planning to execution.
-                <br />
-                Quality, innovation, and reliability in every project we
-                undertake.
-                <br />
-                Transforming infrastructure and shaping the future of the
-                region.
-                <br />
-                Your trusted partner for comprehensive construction services.
-              </p>
+              <TextReveal blockColor="#ff3300" animateOnScroll={true}>
+                <p className="font-pp-neue-montreal text-orange max-w-2xl text-left text-base md:text-lg lg:text-xl">
+                  Three decades of expertise in construction and engineering
+                  across West Africa.
+                  <br />
+                  We deliver integrated solutions from planning to execution.
+                  <br />
+                  Quality, innovation, and reliability in every project we
+                  undertake.
+                  <br />
+                  Transforming infrastructure and shaping the future of the
+                  region.
+                  <br />
+                  Your trusted partner for comprehensive construction services.
+                </p>
+              </TextReveal>
               <Link
                 href="/company"
-                className="font-pp-neue-montreal hover:text-secondary flex cursor-pointer items-center gap-2 text-sm text-black transition-colors"
+                className="font-pp-neue-montreal text-orange hover:text-orange/80 flex cursor-pointer items-center gap-2 text-sm transition-colors"
               >
                 Learn more <ArrowRight size={16} />
               </Link>
+            </div>
+          </div>
+
+          {/* Stats Row (bottom of section) */}
+          <div className="mt-auto flex w-full flex-col gap-8 pt-20 pb-10 sm:flex-row sm:items-end sm:justify-between sm:gap-12 md:pt-28 md:pb-14">
+            <div className="text-left">
+              <div className="font-pp-neue-montreal text-orange text-6xl font-medium tracking-tight md:text-7xl lg:text-8xl">
+                89%
+              </div>
+              <div className="font-pp-neue-montreal text-orange mt-2 text-sm md:text-base">
+                client satisfaction
+              </div>
+            </div>
+            <div className="text-left">
+              <div className="font-pp-neue-montreal text-orange text-6xl font-medium tracking-tight md:text-7xl lg:text-8xl">
+                34+
+              </div>
+              <div className="font-pp-neue-montreal text-orange mt-2 text-sm md:text-base">
+                delivering excellence
+              </div>
+            </div>
+            <div className="text-left">
+              <div className="font-pp-neue-montreal text-orange text-6xl font-medium tracking-tight md:text-7xl lg:text-8xl">
+                48+
+              </div>
+              <div className="font-pp-neue-montreal text-orange mt-2 text-sm md:text-base">
+                completed successfully
+              </div>
             </div>
           </div>
         </div>
