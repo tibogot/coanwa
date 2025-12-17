@@ -47,7 +47,7 @@ export default function Navbar() {
         {/* Contact Link - Desktop */}
         <Link
           href="/contact"
-          className="desktop-nav cursor-pointer bg-tertiary hover:bg-secondary rounded-sm px-4 py-2 text-[0.95rem] font-medium tracking-wide text-white transition-all duration-200"
+          className="desktop-nav bg-orange hover:bg-secondary cursor-pointer rounded-sm px-4 py-2 text-[0.95rem] font-medium tracking-wide text-white transition-all duration-200"
         >
           Contact
         </Link>
@@ -77,7 +77,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={() => setIsOpen(false)}
-            className="cursor-pointer bg-tertiary hover:bg-secondary rounded-sm px-4 py-3 text-base font-medium text-white no-underline transition-all duration-200"
+            className="bg-tertiary hover:bg-secondary cursor-pointer rounded-sm px-4 py-3 text-base font-medium text-white no-underline transition-all duration-200"
           >
             Contact
           </Link>

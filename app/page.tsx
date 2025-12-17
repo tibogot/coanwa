@@ -11,23 +11,67 @@ import Image from "next/image";
 import { Link } from "next-view-transitions";
 import { ArrowRight } from "lucide-react";
 import NigeriaMapSvg from "./components/NigeriaMapSvg";
+import { useEffect, useRef } from "react";
+import { gsap, ScrollTrigger } from "@/lib/gsapConfig";
 
 export default function Home() {
+  const statsRowRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!statsRowRef.current) return;
+
+    const ctx = gsap.context(() => {
+      const els = Array.from(
+        statsRowRef.current!.querySelectorAll<HTMLElement>("[data-count]"),
+      );
+
+      els.forEach((el) => {
+        const endValue = Number(el.dataset.count ?? "0");
+        const suffix = el.dataset.suffix ?? "";
+
+        const state = { value: 0 };
+
+        // Ensure we start at 0 on mount.
+        el.textContent = `0${suffix}`;
+
+        gsap.to(state, {
+          value: endValue,
+          ease: "none",
+          scrollTrigger: {
+            trigger: statsRowRef.current!,
+            start: "top 85%",
+            // Finish earlier so the numbers reach their final values before the section hits the top
+            end: "top 45%",
+            scrub: true,
+          },
+          onUpdate: () => {
+            el.textContent = `${Math.round(state.value)}${suffix}`;
+          },
+        });
+      });
+    }, statsRowRef);
+
+    return () => {
+      ctx.revert();
+      ScrollTrigger.refresh();
+    };
+  }, []);
+
   return (
     <>
       <Leva hidden />
       <ShaderBackground />
       {/* Hero Section with Image Background */}
       <section className="relative h-screen w-full">
-        {/* Center logo overlay */}
-        <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
+        {/* Bottom-left logo overlay */}
+        <div className="pointer-events-none absolute inset-0 z-10 flex items-end justify-start p-6 md:p-10">
           <Image
             src="/newlogohero.svg"
             alt="COANWA"
             width={850}
             height={260}
             priority
-            className="h-auto w-[min(70vw,700px)]"
+            className="h-auto w-[min(60vw,520px)]"
           />
         </div>
         {/* Background Image - 100vh, not fixed */}
@@ -133,9 +177,16 @@ export default function Home() {
           </div>
 
           {/* Stats Row (bottom of section) */}
-          <div className="mt-auto flex w-full flex-col gap-8 pt-20 pb-10 sm:flex-row sm:items-end sm:justify-between sm:gap-12 md:pt-28 md:pb-14">
+          <div
+            ref={statsRowRef}
+            className="mt-auto flex w-full flex-col gap-8 pt-20 pb-10 sm:flex-row sm:items-end sm:justify-between sm:gap-12 md:pt-28 md:pb-14"
+          >
             <div className="text-left">
-              <div className="font-pp-neue-montreal text-orange text-6xl font-medium tracking-tight md:text-7xl lg:text-8xl">
+              <div
+                data-count="89"
+                data-suffix="%"
+                className="font-pp-neue-montreal text-orange text-6xl font-medium tracking-tight md:text-7xl lg:text-8xl"
+              >
                 89%
               </div>
               <div className="font-pp-neue-montreal text-orange mt-2 text-sm md:text-base">
@@ -143,7 +194,11 @@ export default function Home() {
               </div>
             </div>
             <div className="text-left">
-              <div className="font-pp-neue-montreal text-orange text-6xl font-medium tracking-tight md:text-7xl lg:text-8xl">
+              <div
+                data-count="34"
+                data-suffix="+"
+                className="font-pp-neue-montreal text-orange text-6xl font-medium tracking-tight md:text-7xl lg:text-8xl"
+              >
                 34+
               </div>
               <div className="font-pp-neue-montreal text-orange mt-2 text-sm md:text-base">
@@ -151,7 +206,11 @@ export default function Home() {
               </div>
             </div>
             <div className="text-left">
-              <div className="font-pp-neue-montreal text-orange text-6xl font-medium tracking-tight md:text-7xl lg:text-8xl">
+              <div
+                data-count="48"
+                data-suffix="+"
+                className="font-pp-neue-montreal text-orange text-6xl font-medium tracking-tight md:text-7xl lg:text-8xl"
+              >
                 48+
               </div>
               <div className="font-pp-neue-montreal text-orange mt-2 text-sm md:text-base">
