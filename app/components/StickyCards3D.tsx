@@ -12,28 +12,28 @@ const StickyCards3D = () => {
       title: "Planning",
       image: "/sticky-cards/stickycard-1.webp",
       description:
-        "Every element is built to snap into place. We design modular systems where clarity, structure, and reuse come first—no clutter, no excess.",
+        "We start with clear scope, site intelligence, and realistic schedules—so budgets stay controlled and delivery stays predictable.",
     },
     {
       index: "02",
       title: "Design",
       image: "/sticky-cards/stickycard-2.webp",
       description:
-        "From soft gradients to hard edges, our design language draws from real-world materials—elevating interfaces that feel both digital and tangible.",
+        "Our engineers turn requirements into buildable plans—optimizing safety, constructability, and long-term performance.",
     },
     {
       index: "03",
       title: "Construction",
       image: "/sticky-cards/stickycard-3.webp",
       description:
-        "Details matter. We work with intention—aligning pixels, calibrating contrast, and obsessing over every edge until it just feels right.",
+        "From civil works to mechanical and electrical, we execute with tight supervision, quality control, and reliable on-site coordination.",
     },
     {
       index: "04",
       title: "Operation & Maintenance",
       image: "/sticky-cards/stickycard-4.webp",
       description:
-        "Interfaces should have personality. We embed small moments of play and irregularity to bring warmth, charm, and a human feel to the digital.",
+        "We support what we build with handover documentation, inspections, and maintenance planning to keep assets performing over time.",
     },
   ];
 
@@ -84,13 +84,13 @@ const StickyCards3D = () => {
 
   return (
     <div
-      className="relative h-full w-full overflow-hidden"
-      style={{ backgroundColor: "var(--bg)", isolation: "isolate" }}
+      className="relative h-full w-full overflow-hidden bg-[#EAEAEA]"
+      style={{ isolation: "isolate" }}
       ref={container}
     >
       {stickyCardsData.map((cardData, index) => (
         <div
-          className="sticky-card-3d relative flex h-screen w-full items-center justify-center overflow-hidden will-change-transform after:pointer-events-none after:absolute after:top-0 after:left-0 after:z-2 after:h-full after:w-full after:bg-black/50 after:opacity-[var(--after-opacity,0)] after:transition-opacity after:duration-100 after:ease-linear after:content-['']"
+          className="sticky-card-3d relative flex h-screen w-full items-center justify-center overflow-hidden will-change-transform after:pointer-events-none after:absolute after:top-0 after:left-0 after:z-2 after:h-full after:w-full after:bg-black/50 after:opacity-(--after-opacity,0) after:transition-opacity after:duration-100 after:ease-linear after:content-['']"
           style={
             {
               backgroundImage: `url(${cardData.image})`,

@@ -266,6 +266,9 @@ export default function Home() {
       {/* FAQ Section */}
       <FAQ />
 
+      {/* Spacer Section (shows fixed shader background) */}
+      <section className="relative h-screen w-full bg-transparent" />
+
       {/* Full Width Background Image Section */}
       <section className="relative h-screen w-full">
         <div className="absolute inset-0 z-0">
